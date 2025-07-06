@@ -1,0 +1,10 @@
+<svg width="680" height="160" viewBox="0 0 680 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="680" height="160" rx="10" fill="url(#gold_gradient)"/>
+<text x="340" y="85" font-family="Montserrat, sans-serif" font-size="30" font-weight="bold" fill="white" text-anchor="middle">SEGUNDO LINK AQUI</text>
+<defs>
+<linearGradient id="gold_gradient" x1="0" y1="80" x2="680" y2="80" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FDEB71"/>
+<stop offset="1" stop-color="#F8D800"/>
+</linearGradient>
+</defs>
+</svg> 
