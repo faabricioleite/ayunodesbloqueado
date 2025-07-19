@@ -42,24 +42,39 @@
         }
 
         .hero-section {
-            background: linear-gradient(135deg, #C99A30, #ECCC67, #FEF1A2);
-            padding: 30px 20px;
+            background: #ffffff;
+            padding: 60px 20px;
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            border-bottom: 3px solid transparent;
+            border-image: linear-gradient(90deg, #C99A30, #FEF1A2, #C99A30) 1;
         }
 
         .hero-title {
             font-family: 'Playfair Display', serif;
-            font-size: 48px;
+            font-size: 52px;
             font-weight: 700;
-            color: #000;
+            background: linear-gradient(135deg, #C99A30 0%, #FEF1A2 50%, #C99A30 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             max-width: 900px;
             margin: 0 auto;
             line-height: 1.2;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
         }
 
         .subtitle-section {
@@ -135,6 +150,296 @@
 
         .cta-button:active {
             transform: translateY(-1px);
+        }
+
+        /* Nova seção reformulada de prejuízo */
+        .warning-section {
+            background: #ffffff;
+            padding: 80px 20px;
+            color: #333;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .warning-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: transparent;
+            pointer-events: none;
+        }
+
+        .warning-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .warning-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .warning-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #C99A30 0%, #FEF1A2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .warning-subtitle {
+            font-size: 22px;
+            color: #C99A30;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .warning-description {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 50px;
+            align-items: center;
+        }
+
+        .story-text {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid #e0e0e0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .story-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #C99A30 0%, #FEF1A2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+
+        .story-paragraph {
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .story-highlight {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            color: #000;
+            padding: 25px;
+            border-radius: 15px;
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 20px;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        }
+
+        .solution-preview {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(40, 167, 69, 0.3);
+        }
+
+        .solution-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 25px;
+        }
+
+        .solution-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .solution-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 18px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: left;
+            border-left: 4px solid #fff;
+        }
+
+        .ipad-showcase {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+        }
+
+        .ipad-image {
+            width: 100%;
+            height: auto;
+            max-width: 450px;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+            transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+            transition: transform 0.3s ease;
+        }
+
+        .ipad-image:hover {
+            transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.05);
+        }
+
+        .warning-cta {
+            text-align: center;
+            background: linear-gradient(135deg, #C99A30, #FEF1A2);
+            color: #000;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 50px;
+            box-shadow: 0 15px 40px rgba(201, 154, 48, 0.3);
+        }
+
+        .warning-cta-text {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Seção de depoimentos */
+        .testimonials-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 80px 20px;
+            position: relative;
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .testimonials-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #C99A30 0%, #FEF1A2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .testimonials-subtitle {
+            font-size: 20px;
+            color: #666;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            border-color: #C99A30;
+        }
+
+        .testimonial-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Botão fixo do WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-2px);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+            color: white;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .whatsapp-float svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
         }
 
         .guide-section {
@@ -246,12 +551,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-
-        .ipad-image {
-            width: 100%;
-            height: auto;
-            max-width: 300px;
         }
 
         .guide-cta {
@@ -408,7 +707,7 @@
         /* Responsivo */
         @media (max-width: 768px) {
             .hero-title {
-                font-size: 32px;
+                font-size: 36px;
             }
 
             .hero-subtitle {
@@ -416,7 +715,7 @@
             }
 
             .hero-section {
-                padding: 25px 20px;
+                padding: 40px 20px;
             }
 
             .subtitle-section {
@@ -436,7 +735,62 @@
             .cta-button {
                 font-size: 16px;
                 padding: 16px 32px;
-                margin-top: 15px;
+                margin-top: 240px;
+            }
+
+            .warning-section {
+                padding: 50px 15px;
+            }
+
+            .warning-title {
+                font-size: 32px;
+            }
+
+            .warning-subtitle {
+                font-size: 18px;
+            }
+
+            .story-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .story-text, .solution-preview {
+                padding: 30px 20px;
+            }
+
+            .story-title, .solution-title {
+                font-size: 24px;
+            }
+
+            .ipad-image {
+                max-width: 350px;
+            }
+
+            .testimonials-section {
+                padding: 50px 15px;
+            }
+
+            .testimonials-title {
+                font-size: 32px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 15px;
+                right: 15px;
+                font-size: 26px;
+            }
+
+            .whatsapp-float svg {
+                width: 24px;
+                height: 24px;
             }
 
             .guide-section {
@@ -472,10 +826,6 @@
 
             .problem-item, .solution-item {
                 font-size: 14px;
-            }
-
-            .ipad-image {
-                max-width: 250px;
             }
 
             .guide-cta {
@@ -530,7 +880,6 @@
             .target-final p {
                 font-size: 18px;
             }
-            }
 
             .reality-text {
                 font-size: 18px;
@@ -547,7 +896,7 @@
             }
 
             .hero-section {
-                padding: 20px 15px;
+                padding: 30px 15px;
             }
 
             .subtitle-section {
@@ -566,7 +915,54 @@
             .cta-button {
                 font-size: 14px;
                 padding: 14px 28px;
+                margin-top: 45px;
                 letter-spacing: 0.5px;
+            }
+
+            .warning-section {
+                padding: 30px 10px;
+            }
+
+            .warning-title {
+                font-size: 28px;
+            }
+
+            .warning-subtitle {
+                font-size: 16px;
+            }
+
+            .story-text, .solution-preview {
+                padding: 25px 15px;
+            }
+
+            .ipad-image {
+                max-width: 280px;
+            }
+
+            .testimonials-section {
+                padding: 30px 10px;
+            }
+
+            .testimonials-title {
+                font-size: 28px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 10px;
+                right: 10px;
+                font-size: 22px;
+            }
+
+            .whatsapp-float svg {
+                width: 20px;
+                height: 20px;
             }
 
             .guide-section {
@@ -890,10 +1286,6 @@
              max-width: 100%;
              height: auto;
          }
-            mask-composite: xor;
-            -webkit-mask-composite: xor;
-            z-index: -1;
-        }
 
         .card-header {
             text-align: center;
@@ -1365,45 +1757,50 @@
         <a href="https://pay.hotmart.com/X100423221V?checkoutMode=10" target="_blank" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">QUERO FAZER UMA REFORMA SEM DOR DE CABEÇA</a>
     </section>
 
-    <section class="guide-section">
-        <div class="guide-container">
-            <div class="guide-hero">
-                <h2 class="guide-title">QUEM ECONOMIZA E QUEM PERDE DINHEIRO</h2>
-                <p class="guide-subtitle">Enquanto uns gastam o dobro e passam raiva, outros economizam milhares e dormem tranquilos.</p>
+    <!-- Nova seção reformulada com foco no prejuízo -->
+    <section class="warning-section">
+        <div class="warning-container">
+            <div class="warning-header">
+                <h2 class="warning-title">15 MIL REAIS JOGADOS FORA!</h2>
+                <p class="warning-description">Enquanto você lê isso, alguém está descobrindo que precisa gastar outros 15 mil reais só para ARRUMAR o que foi feito errado na reforma.</p>
             </div>
 
-            <div class="guide-showcase">
-                <div class="showcase-content">
-                    <div class="problem-solution">
-                        <div class="problem-side">
-                            <h3>VOCÊ ESTÁ FAZENDO ISSO?</h3>
-                            <div class="problem-list">
-                                <div class="problem-item">Comprando material sem saber quando</div>
-                                <div class="problem-item">Contratando qualquer um que aparece</div>
-                                <div class="problem-item">Sem cronograma definido</div>
-                                <div class="problem-item">Orçamento no chute</div>
-                            </div>
-                        </div>
-                        
-                        <div class="solution-side">
-                            <h3>QUEM SE DEU BEM FAZ ASSIM:</h3>
-                            <div class="solution-list">
-                                <div class="solution-item">Cronograma que economiza 30-50%</div>
-                                <div class="solution-item">Profissionais checados e aprovados</div>
-                                <div class="solution-item">Timing certo para cada compra</div>
-                                <div class="solution-item">Orçamento realista e controlado</div>
-                            </div>
-                        </div>
+            <div class="story-content">
+                <div class="story-text">
+                    <h3 class="story-title">O que aconteceu com a Aline:</h3>
+                    <p class="story-paragraph">
+                        <strong>Início da história:</strong> Aline estava animada para reformar seu apartamento de 60m². Orçamento inicial: R$ 30.000.
+                    </p>
+                    <p class="story-paragraph">
+                        <strong>O pesadelo começou:</strong> Contratou o primeiro pedreiro que apareceu. Comprou material "no olho". Não tinha cronograma.
+                    </p>
+                    <p class="story-paragraph">
+                        <strong>O resultado:</strong> Depois de 4 meses, descobriu que a fiação estava errada, o piso mal colocado e os azulejos caindo.
+                    </p>
+                    <div class="story-highlight">
+                        💸 Gasto para REFAZER tudo: R$ 15.347
                     </div>
-                    
-                    <div class="showcase-image">
+                </div>
+
+                <div class="solution-preview">
+                    <h3 class="solution-title">Isso não precisava ter acontecido!</h3>
+                    <div class="solution-list">
+                        <div class="solution-item">✅ Estratégias com cronograma técnico completo</div>
+                        <div class="solution-item">✅ Sequência correta da demolição ao acabamento</div>
+                        <div class="solution-item">✅ Checklists técnicos para cada fase da obra</div>
+                        <div class="solution-item">✅ Como conduzir reuniões técnicas com profissionais</div>
+                        <div class="solution-item">✅ Planejamento detalhado de materiais por etapa</div>
+                    </div>
+                    <div class="ipad-showcase">
                         <img src="images/ipad.png" alt="Guia de Reforma na Prática" class="ipad-image">
                     </div>
                 </div>
             </div>
 
-            <div class="guide-cta">
-                <p class="cta-text">Quer fazer parte do grupo que <strong>economiza</strong> ao invés de <strong>perder dinheiro</strong> na reforma?</p>
+            <div class="warning-cta">
+                <p class="warning-cta-text">
+                    Com esse valor, você pode comprar móveis novos ou fazer uma viagem incrível. Ao invés disso, foi dinheiro jogado fora por falta de conhecimento!
+                </p>
             </div>
         </div>
     </section>
@@ -1507,6 +1904,37 @@
         </div>
     </section>
 
+    <!-- Nova seção de depoimentos -->
+    <section class="testimonials-section">
+        <div class="testimonials-container">
+            <div class="testimonials-header">
+                <h2 class="testimonials-title">VEJA O QUE NOSSOS CLIENTES ESTÃO DIZENDO</h2>
+                <p class="testimonials-subtitle">Pessoas reais que evitaram prejuízos e tiveram sucesso em suas reformas</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <img src="images/ps1.png" alt="Depoimento de cliente satisfeito" class="testimonial-image">
+                </div>
+                <div class="testimonial-card">
+                    <img src="images/ps2.png" alt="Depoimento de cliente satisfeito" class="testimonial-image">
+                </div>
+                <div class="testimonial-card">
+                    <img src="images/ps3.png" alt="Depoimento de cliente satisfeito" class="testimonial-image">
+                </div>
+                <div class="testimonial-card">
+                    <img src="images/ps4.jpeg" alt="Depoimento de cliente satisfeito" class="testimonial-image">
+                </div>
+                <div class="testimonial-card">
+                    <img src="images/ps5.png" alt="Depoimento de cliente satisfeito" class="testimonial-image">
+                </div>
+                <div class="testimonial-card">
+                    <img src="images/ps6.png" alt="Depoimento de cliente satisfeito" class="testimonial-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="about-me-section">
         <div class="about-me-container">
             <div class="about-me">
@@ -1536,6 +1964,16 @@
             </div>
         </div>
     </section>
+
+    <!-- Botão fixo do WhatsApp -->
+    <a href="https://api.whatsapp.com/send?phone=5561999827553&text=Oi!%20Estou%20na%20p%C3%A1gina%20do%20Guia%20de%20Reforma%20e%20fiquei%20com%20algumas%20d%C3%BAvidas.%20Preciso%20de%20suporte!" 
+       target="_blank" 
+       class="whatsapp-float" 
+       title="Fale conosco no WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12,2 C6.47715,2 2,6.47715 2,12 C2,13.8896 2.52505,15.6594 3.43756,17.1683 L2.54581,20.2002 C2.32023,20.9672 3.03284,21.6798 3.79975,21.4542 L6.83171,20.5624 C8.34058,21.475 10.1104,22 12,22 C17.5228,22 22,17.5228 22,12 C22,6.47715 17.5228,2 12,2 Z M9.73821,14.2627 C11.7607,16.2852 13.692,16.5518 14.3739,16.5769 C15.4111,16.6151 16.421,15.823 16.8147,14.9042 C16.9112,14.6792 16.8871,14.4085 16.7255,14.2014 C16.1782,13.5005 15.4373,12.9983 14.7134,12.4984 C14.4006,12.282 13.9705,12.349 13.7401,12.6555 L13.1394,13.5706 C13.0727,13.6721 12.9402,13.707 12.8348,13.6467 C12.4283,13.4143 11.8356,13.018 11.4092,12.5916 C10.9833,12.1657 10.6111,11.5998 10.4022,11.2195 C10.3473,11.1195 10.3777,10.996 10.4692,10.928 L11.3927,10.2422 C11.6681,10.0038 11.7165,9.59887 11.5138,9.30228 C11.065,8.64569 10.5422,7.8112 9.7855,7.25926 C9.57883,7.1085 9.3174,7.09158 9.10155,7.18408 C8.1817,7.5783 7.38574,8.58789 7.42398,9.62695 C7.44908,10.3089 7.71572,12.2402 9.73821,14.2627 Z" fill="white"/>
+        </svg>
+    </a>
 
     <footer>
         <p>ASTEC - ASSESSORIA TECNICA E ENGENHARIA CONSULTIVA LTDA<br>CNPJ: 57.724.224/0001-63</p>
