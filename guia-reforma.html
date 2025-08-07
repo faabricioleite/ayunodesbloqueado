@@ -34,35 +34,74 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Quicksand', sans-serif;
-            background-color: #ffffff;
-            color: #333;
+            background-color: #000000;
+            color: #ffffff;
             line-height: 1.6;
         }
 
-        .hero-section {
-            background: #ffffff;
-            padding: 60px 20px;
+        /* Banner estático no topo */
+        .top-banner {
+            position: static;
+            width: 100%;
+            background-color: #ff0000;
+            color: #ffffff;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            padding: 15px 20px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+            border: none;
+        }
+
+        .top-banner-text {
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .top-banner-highlight {
+            color: #000000;
+            font-weight: 700;
+        }
+
+        .hero-section {
+            background: #000000;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
             align-items: center;
             border-bottom: 3px solid transparent;
             border-image: linear-gradient(90deg, #C99A30, #FEF1A2, #C99A30) 1;
         }
 
+        .hero-left {
+            text-align: left;
+        }
+
+        .hero-logo {
+            max-width: 200px;
+            margin-bottom: 30px;
+        }
+
         .hero-title {
             font-family: 'Playfair Display', serif;
-            font-size: 52px;
+            font-size: 42px;
             font-weight: 700;
-            background: linear-gradient(135deg, #C99A30 0%, #FEF1A2 50%, #C99A30 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            max-width: 900px;
-            margin: 0 auto;
+            background: linear-gradient(145deg, #C99A30, #FEF1A2) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            color: #C99A30 !important;
+            margin: 0 0 20px 0;
             line-height: 1.2;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             animation: shimmer 3s ease-in-out infinite;
@@ -77,19 +116,25 @@
             }
         }
 
-        .subtitle-section {
-            background-color: #ffffff;
-            padding: 20px 20px;
+        .hero-subtitle {
+            font-size: 24px;
+            font-weight: 500;
+            color: #ffffff;
+            margin: 0 0 30px 0;
+            line-height: 1.4;
+        }
+
+        .hero-right {
             text-align: center;
         }
 
-        .hero-subtitle {
-            font-size: 28px;
-            font-weight: 500;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.4;
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .subtitle-section {
+            display: none;
         }
 
         .content-section {
@@ -97,6 +142,28 @@
             margin: 0 auto;
             padding: 20px 20px;
             text-align: center;
+            border-bottom: 3px solid transparent;
+            border-image: linear-gradient(90deg, #C99A30, #FEF1A2, #C99A30) 1;
+        }
+
+        .video-intro-text {
+            font-size: 22px;
+            font-weight: 500;
+            color: #ffffff;
+            margin: 0 auto 30px auto;
+            line-height: 1.4;
+            max-width: 800px;
+            background-color: #000000;
+            border: 2px solid #dc3545;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(220, 53, 69, 0.2);
+            text-align: center;
+        }
+
+        .video-intro-text b {
+            font-weight: 700;
+            color: #dc3545;
         }
 
         .video-container {
@@ -128,9 +195,9 @@
             background-color: #0A4659;
             color: white;
             font-family: 'Quicksand', sans-serif;
-            font-size: 20px;
+            font-size: 16px;
             font-weight: 700;
-            padding: 20px 40px;
+            padding: 15px 30px;
             border: none;
             border-radius: 50px;
             text-decoration: none;
@@ -153,186 +220,135 @@
         }
 
         /* Nova seção reformulada de prejuízo */
-        .warning-section {
-            background: #ffffff;
+        /* Guide Benefits Section Styles */
+        .guide-benefits-section {
+            background: #000000;
             padding: 80px 20px;
-            color: #333;
-            position: relative;
-            overflow: hidden;
         }
 
-        .warning-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: transparent;
-            pointer-events: none;
-        }
-
-        .warning-container {
+        .guide-benefits-container {
             max-width: 1200px;
             margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .warning-header {
             text-align: center;
-            margin-bottom: 60px;
         }
 
-        .warning-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 42px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #C99A30 0%, #FEF1A2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .guide-book-image {
+            margin-bottom: 40px;
         }
 
-        .warning-subtitle {
-            font-size: 22px;
-            color: #C99A30;
-            font-weight: 600;
-            margin-bottom: 15px;
+        .book-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
         }
 
-        .warning-description {
-            font-size: 18px;
-            color: #666;
-            line-height: 1.6;
-            max-width: 700px;
+        .guide-content {
+            max-width: 1000px;
             margin: 0 auto;
         }
 
-        .story-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 50px;
-            align-items: center;
-        }
-
-        .story-text {
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 20px;
-            border: 2px solid #e0e0e0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .story-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
+        .guide-title {
+            font-size: 2.8rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #C99A30 0%, #FEF1A2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 25px;
+            background: linear-gradient(145deg, #C99A30, #FEF1A2) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            color: #C99A30 !important;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .guide-title strong {
+            background: linear-gradient(145deg, #C99A30, #FEF1A2) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            color: #C99A30 !important;
+        }
+
+        .guide-cta-button {
+            display: inline-block;
+            background: #0B4659;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(11, 70, 89, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .guide-cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(11, 70, 89, 0.4);
+            text-decoration: none;
+            color: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 25px;
+            background: #1a1a1a;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(255,255,255,0.08);
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .benefit-icon {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #c9a96e 0%, #d4b876 100%);
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(201, 169, 110, 0.3);
+            color: white;
+        }
+
+        .benefit-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .benefit-content h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
             line-height: 1.3;
         }
 
-        .story-paragraph {
-            font-size: 17px;
-            line-height: 1.7;
-            margin-bottom: 20px;
-            color: #666;
-        }
-
-        .story-highlight {
-            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
-            color: #000;
-            padding: 25px;
-            border-radius: 15px;
-            font-size: 20px;
-            font-weight: 700;
-            text-align: center;
-            margin-top: 20px;
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
-        }
-
-        .solution-preview {
-            background: linear-gradient(135deg, #28a745, #20c997);
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(40, 167, 69, 0.3);
-        }
-
-        .solution-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 25px;
-        }
-
-        .solution-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .solution-item {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 18px;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            text-align: left;
-            border-left: 4px solid #fff;
-        }
-
-        .ipad-showcase {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 40px 0;
-        }
-
-        .ipad-image {
-            width: 100%;
-            height: auto;
-            max-width: 450px;
-            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
-            transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
-            transition: transform 0.3s ease;
-        }
-
-        .ipad-image:hover {
-            transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.05);
-        }
-
-        .warning-cta {
-            text-align: center;
-            background: linear-gradient(135deg, #C99A30, #FEF1A2);
-            color: #000;
-            padding: 30px;
-            border-radius: 20px;
-            margin-top: 50px;
-            box-shadow: 0 15px 40px rgba(201, 154, 48, 0.3);
-        }
-
-        .warning-cta-text {
-            font-size: 22px;
-            font-weight: 700;
-            line-height: 1.5;
+        .benefit-content p {
+            font-size: 1rem;
+            color: #cccccc;
             margin: 0;
+            line-height: 1.5;
         }
 
         /* Seção de depoimentos */
         .testimonials-section {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: #000000;
             padding: 80px 20px;
             position: relative;
         }
@@ -357,13 +373,12 @@
             background-clip: text;
             margin-bottom: 20px;
             line-height: 1.2;
-            text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .testimonials-subtitle {
             font-size: 20px;
-            color: #666;
+            color: #cccccc;
             font-weight: 500;
             line-height: 1.5;
         }
@@ -376,10 +391,10 @@
         }
 
         .testimonial-card {
-            background: white;
+            background: #1a1a1a;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
             border: 2px solid transparent;
         }
@@ -443,7 +458,7 @@
         }
 
         .guide-section {
-            background-color: #fff;
+            background-color: #000000;
             padding: 60px 20px;
             margin-top: 40px;
         }
@@ -472,7 +487,7 @@
 
         .guide-subtitle {
             font-size: 18px;
-            color: #666;
+            color: #cccccc;
             line-height: 1.5;
             max-width: 600px;
             margin: 0 auto;
@@ -501,12 +516,12 @@
         }
 
         .problem-side {
-            background: #fff5f5;
+            background: #1a1a1a;
             border-left: 4px solid #d32f2f;
         }
 
         .solution-side {
-            background: #f0f9f0;
+            background: #1a1a1a;
             border-left: 4px solid #28a745;
         }
 
@@ -539,11 +554,11 @@
         }
 
         .problem-item {
-            color: #666;
+            color: #cccccc;
         }
 
         .solution-item {
-            color: #333;
+            color: #ffffff;
             font-weight: 500;
         }
 
@@ -555,7 +570,7 @@
 
         .guide-cta {
             text-align: center;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            background: #000000;
             padding: 30px;
             border-radius: 15px;
             border: 2px solid #C99A30;
@@ -564,7 +579,7 @@
         .cta-text {
             font-size: 20px;
             font-weight: 600;
-            color: #333;
+            color: #ffffff;
             margin: 0;
             line-height: 1.5;
         }
@@ -706,6 +721,11 @@
 
         /* Responsivo */
         @media (max-width: 768px) {
+            .top-banner {
+                padding: 12px 15px;
+                font-size: 14px;
+            }
+
             .hero-title {
                 font-size: 36px;
             }
@@ -886,6 +906,101 @@
             }
         }
 
+        @media (max-width: 768px) {
+             .hero-section {
+                 grid-template-columns: 1fr;
+                 gap: 40px;
+                 padding: 40px 20px;
+                 display: flex;
+                 flex-direction: column;
+             }
+
+             .hero-left {
+                 text-align: center;
+                 order: 1;
+                 display: flex;
+                 flex-direction: column;
+             }
+
+             .hero-logo {
+                 order: 1;
+                 max-width: 150px;
+                 margin-bottom: 20px;
+                 align-self: center;
+             }
+
+             .hero-title {
+                 order: 2;
+                 font-size: 32px;
+             }
+
+             .hero-subtitle {
+                 order: 3;
+                 font-size: 20px;
+                 margin-bottom: 15px;
+             }
+
+             .cta-button {
+                 order: 5;
+                 font-size: 14px;
+                 padding: 12px 25px;
+                 align-self: center;
+                 margin-top: 0;
+             }
+
+             .hero-right {
+                 order: 4;
+             }
+
+             /* Guide Benefits Mobile Styles */
+             .guide-book-image {
+                 margin-bottom: 30px;
+             }
+
+             .book-image {
+                 max-width: 200px;
+             }
+
+             .guide-title {
+                 font-size: 2.2rem;
+             }
+
+             .guide-cta-button {
+                 display: block;
+                 text-align: center;
+                 margin: 30px auto 40px;
+                 padding: 15px 30px;
+                 font-size: 1rem;
+             }
+
+             .benefits-grid {
+                 grid-template-columns: 1fr;
+                 gap: 20px;
+             }
+
+             .benefit-item {
+                 padding: 20px;
+             }
+
+             .benefit-icon {
+                 width: 50px;
+                 height: 50px;
+             }
+
+             .benefit-icon svg {
+                 width: 20px;
+                 height: 20px;
+             }
+
+             .benefit-content h3 {
+                 font-size: 1.1rem;
+             }
+
+             .benefit-content p {
+                 font-size: 0.9rem;
+             }
+         }
+
         @media (max-width: 480px) {
             .hero-title {
                 font-size: 28px;
@@ -899,17 +1014,23 @@
                 padding: 30px 15px;
             }
 
-            .subtitle-section {
-                padding: 15px 15px;
+            .hero-logo {
+                max-width: 120px;
+            }
+
+            .video-intro-text {
+                font-size: 18px;
+                margin: 0 0 20px 0;
+                padding: 0 10px;
+            }
+
+            .content-section {
+                padding: 40px 15px;
             }
 
             .video-container {
-                margin: 10px 0;
-                padding: 0 5px;
-            }
-
-            .video-container iframe {
-                height: 250px;
+                margin: 20px 0;
+                padding: 0 10px;
             }
 
             .cta-button {
@@ -1121,7 +1242,7 @@
         }
 
         .pricing-section {
-            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            background: #000000;
             padding: 80px 20px;
             position: relative;
             overflow: hidden;
@@ -1161,14 +1282,13 @@
             background-clip: text;
             margin-bottom: 20px;
             line-height: 1.2;
-            text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .pricing-subtitle {
             font-size: 20px;
             font-weight: 500;
-            color: #666;
+            color: #cccccc;
             margin-bottom: 40px;
             line-height: 1.5;
             max-width: 800px;
@@ -1178,7 +1298,7 @@
         .pricing-reality {
             font-size: 18px;
             font-weight: 600;
-            color: #333;
+            color: #ffffff;
             text-align: center;
             line-height: 1.6;
             margin: 20px auto 40px;
@@ -1186,10 +1306,10 @@
         }
 
         .pricing-card {
-            background: white;
+            background: #1a1a1a;
             border-radius: 20px;
             padding: 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 60px rgba(255, 255, 255, 0.15);
             position: relative;
             overflow: hidden;
             max-width: 500px;
@@ -1205,7 +1325,7 @@
             font-family: 'Playfair Display', serif;
             font-size: 28px;
             font-weight: 800;
-            color: #333;
+            color: #ffffff;
             margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -1213,7 +1333,7 @@
 
         .card-description {
             font-size: 18px;
-            color: #666;
+            color: #cccccc;
             margin-bottom: 30px;
             line-height: 1.5;
         }
@@ -1232,26 +1352,26 @@
         .currency {
             font-size: 24px;
             font-weight: 600;
-            color: #333;
+            color: #ffffff;
             margin-right: 5px;
         }
 
         .amount {
             font-size: 56px;
             font-weight: 800;
-            color: #333;
+            color: #ffffff;
             line-height: 1;
         }
 
         .cents {
             font-size: 24px;
             font-weight: 600;
-            color: #333;
+            color: #ffffff;
         }
 
         .installments {
             font-size: 16px;
-            color: #666;
+            color: #cccccc;
             margin: 0;
         }
 
@@ -1309,14 +1429,14 @@
             font-family: 'Playfair Display', serif;
             font-size: 32px;
             font-weight: 700;
-            color: #333;
+            color: #ffffff;
             margin-bottom: 10px;
             line-height: 1.2;
         }
 
         .card-subtitle {
             font-size: 18px;
-            color: #666;
+            color: #cccccc;
             font-weight: 500;
             line-height: 1.4;
         }
@@ -1339,25 +1459,25 @@
         .currency {
             font-size: 28px;
             font-weight: 700;
-            color: #333;
+            color: #ffffff;
         }
 
         .amount {
             font-size: 64px;
             font-weight: 700;
-            color: #333;
+            color: #ffffff;
             margin: 0 5px;
         }
 
         .cents {
             font-size: 28px;
             font-weight: 700;
-            color: #333;
+            color: #ffffff;
         }
 
         .price-installments {
             font-size: 18px;
-            color: #666;
+            color: #cccccc;
             font-weight: 500;
         }
 
@@ -1372,7 +1492,7 @@
             padding: 12px 0;
             border-bottom: 1px solid #f0f0f0;
             font-size: 16px;
-            color: #333;
+            color: #ffffff;
         }
 
         .feature-item:last-child {
@@ -1444,7 +1564,7 @@
 
         .security-item {
             font-size: 14px;
-            color: #666;
+            color: #cccccc;
             font-weight: 500;
             display: flex;
             align-items: center;
@@ -1490,7 +1610,6 @@
              color: #FEF1A2;
              margin-bottom: 10px;
              line-height: 1.2;
-             text-transform: uppercase;
              letter-spacing: 1px;
          }
 
@@ -1594,7 +1713,7 @@
          /* About Me Section Styles */
          .about-me-section {
              padding: 80px 20px;
-             background: #fff;
+             background: #000000;
          }
 
          .about-me-container {
@@ -1631,7 +1750,7 @@
              font-size: 18px;
              line-height: 1.8;
              margin-bottom: 20px;
-             color: #333;
+             color: #ffffff;
          }
 
          .about-image {
@@ -1658,7 +1777,7 @@
              width: 50px;
              height: 50px;
              border-radius: 50%;
-             background: #f8f9fa;
+             background: #1a1a1a;
              transition: all 0.3s ease;
          }
 
@@ -1682,10 +1801,10 @@
          footer {
              text-align: center;
              padding: 40px 20px;
-             background: #f8f9fa;
-             border-top: 1px solid #e0e0e0;
+             background: #000000;
+             border-top: 1px solid #333333;
              font-size: 12px;
-             color: #888;
+             color: #cccccc;
          }
 
          footer p {
@@ -1741,111 +1860,174 @@
     </style>
 </head>
 <body>
-    <section class="hero-section">
-        <h1 class="hero-title">O GUIA QUE VAI TE FAZER ECONOMIZAR MILHARES DE REAIS NA REFORMA DO SEU IMÓVEL</h1>
-    </section>
+    <!-- Banner fixo no topo -->
+    <div class="top-banner">
+        <p class="top-banner-text">
+            Em <span class="top-banner-highlight">130 páginas</span> você vai evitar o <span class="top-banner-highlight">perrengue da obra eterna</span> e realizar sua reforma <span class="top-banner-highlight">do seu jeitinho</span>.
+        </p>
+    </div>
 
-    <section class="subtitle-section">
-        <p class="hero-subtitle">Evite os erros que mais detonam o seu dinheiro numa reforma — antes que seja tarde demais.</p>
+    <section class="hero-section">
+        <div class="hero-left">
+            <img src="images/astec.png" alt="Astec Logo" class="hero-logo">
+            <h1 class="hero-title">Transforme sua casa dos sonhos sem dor de cabeça e sem orçamento estourado</h1>
+                <p class="hero-subtitle">Descubra como evitar o perrengue da obra eterna e realizar sua reforma sem estresse com pedreiro — do seu jeitinho, sem surpresas no meio da obra.</p>
+            <a href="https://pay.hotmart.com/X100423221V?checkoutMode=10" target="_blank" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">QUERO MINHA CASA DOS SONHOS</a>
+        </div>
+        <div class="hero-right">
+            <img src="images/camila-checklist.png" alt="Camila Carvalho com Checklist" class="hero-image">
+        </div>
     </section>
 
     <section class="content-section">
+        <p class="video-intro-text">Se você não quer descobrir como uma pessoa gastou <b>R$ 15.347 a mais</b> só para refazer o que foi feito errado na primeira reforma, <b>não assista esse vídeo!</b></p>
         <div class="video-container">
             <iframe id="panda-d5457e69-98d7-4ab9-9cb4-fad7d91bc723" src="https://player-vz-da77d45b-cd8.tv.pandavideo.com.br/embed/?v=d5457e69-98d7-4ab9-9cb4-fad7d91bc723&startTime=5" style="border:none;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowfullscreen=true fetchpriority="high"></iframe>
         </div>
-
-        <a href="https://pay.hotmart.com/X100423221V?checkoutMode=10" target="_blank" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">QUERO FAZER UMA REFORMA SEM DOR DE CABEÇA</a>
     </section>
 
     <!-- Nova seção reformulada com foco no prejuízo -->
-    <section class="warning-section">
-        <div class="warning-container">
-            <div class="warning-header">
-                <h2 class="warning-title">15 MIL REAIS JOGADOS FORA!</h2>
-                <p class="warning-description">Enquanto você lê isso, alguém está descobrindo que precisa gastar outros 15 mil reais só para ARRUMAR o que foi feito errado na reforma.</p>
+    <section class="guide-benefits-section">
+        <div class="guide-benefits-container">
+            <div class="guide-book-image">
+                <img src="images/book.png" alt="Guia de Reforma na Prática" class="book-image">
             </div>
-
-            <div class="story-content">
-                <div class="story-text">
-                    <h3 class="story-title">O que aconteceu com a Aline:</h3>
-                    <p class="story-paragraph">
-                        <strong>Início da história:</strong> Aline estava animada para reformar seu apartamento de 60m². Orçamento inicial: R$ 30.000.
-                    </p>
-                    <p class="story-paragraph">
-                        <strong>O pesadelo começou:</strong> Contratou o primeiro pedreiro que apareceu. Comprou material "no olho". Não tinha cronograma.
-                    </p>
-                    <p class="story-paragraph">
-                        <strong>O resultado:</strong> Depois de 4 meses, descobriu que a fiação estava errada, o piso mal colocado e os azulejos caindo.
-                    </p>
-                    <div class="story-highlight">
-                        💸 Gasto para REFAZER tudo: R$ 15.347
+            
+            <div class="guide-content">
+                <h2 class="guide-title">Evite o <strong>perrengue da obra eterna</strong> e realize sua reforma <strong>do seu jeitinho</strong></h2>
+                
+                <a href="https://pay.hotmart.com/X100423221V?checkoutMode=10" target="_blank" class="guide-cta-button" onclick="fbq('track', 'InitiateCheckout');">
+                    QUERO EVITAR O PERRENGUE DA OBRA
+                </a>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 12l2 2 4-4"/>
+                                <path d="M21 12c.552 0 1-.448 1-1V5c0-.552-.448-1-1-1H3c-.552 0-1 .448-1 1v6c0 .552.448 1 1 1h9zm0 0v7c0 .552-.448 1-1 1H3c-.552 0-1-.448-1-1v-7"/>
+                            </svg>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Planejamento do zero</h3>
+                            <p>Organize tempo, dinheiro, etapas e profissionais sem se perder</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="1" x2="12" y2="23"/>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Orçamento realista</h3>
+                            <p>Evite gastos dobrados e surpresas no meio da obra</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Checklist completo</h3>
+                            <p>Tudo o que precisa ser feito antes de quebrar a primeira parede</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Etapas detalhadas</h3>
+                            <p>Da demolição ao acabamento, sem retrabalho ou bancada torta</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/>
+                                <path d="M14.5 6.5a4.5 4.5 0 0 0 2.11-.55C18.61 6.88 20 10.17 20 14c0 2.21-.77 4.26-2.05 5.88"/>
+                                <path d="M18.5 8.5a2.5 2.5 0 0 0 1.19-.3C20.6 9.07 21 10.46 21 12c0 1.19-.28 2.32-.78 3.31"/>
+                            </svg>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Dicas de engenheira</h3>
+                            <p>Experiência real de quem já cuidou de mais de 2.500 imóveis</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Cronograma pronto</h3>
+                            <p>Obra com prazo certo, sem atraso infinito ou estresse com pedreiro</p>
+                        </div>
                     </div>
                 </div>
-
-                <div class="solution-preview">
-                    <h3 class="solution-title">Isso não precisava ter acontecido!</h3>
-                    <div class="solution-list">
-                        <div class="solution-item">✅ Estratégias com cronograma técnico completo</div>
-                        <div class="solution-item">✅ Sequência correta da demolição ao acabamento</div>
-                        <div class="solution-item">✅ Checklists técnicos para cada fase da obra</div>
-                        <div class="solution-item">✅ Como conduzir reuniões técnicas com profissionais</div>
-                        <div class="solution-item">✅ Planejamento detalhado de materiais por etapa</div>
-                    </div>
-                    <div class="ipad-showcase">
-                        <img src="images/ipad.png" alt="Guia de Reforma na Prática" class="ipad-image">
-                    </div>
-                </div>
-            </div>
-
-            <div class="warning-cta">
-                <p class="warning-cta-text">
-                    Com esse valor, você pode comprar móveis novos ou fazer uma viagem incrível. Ao invés disso, foi dinheiro jogado fora por falta de conhecimento!
-                </p>
             </div>
         </div>
     </section>
 
     <section class="target-section">
-        <div class="target-container">
-            <div class="target-header">
-                <h2 class="target-main-title">ESSE GUIA É PRA VOCÊ?</h2>
-                <p class="target-subtitle">Descubra se você faz parte do grupo que vai se dar bem ou continuar se complicando</p>
-            </div>
-
-            <div class="target-content">
-                <div class="target-for">
-                    <h3 class="target-title-for">É PRA VOCÊ SE...</h3>
-                    <div class="target-list">
-                        <div class="target-item-for">Você está cansado de ver gente "se dando bem" enquanto você sempre se complica</div>
-                        <div class="target-item-for">Você quer ser aquela pessoa que fala "minha reforma foi tranquila" (e não estar mentindo)</div>
-                        <div class="target-item-for">Você não aguenta mais depender da "sorte" pra não se ferrar numa obra</div>
-                        <div class="target-item-for">Você quer ter as cartas na mão ao invés de ficar rezando pra dar certo</div>
-                        <div class="target-item-for">Você prefere aprender com quem já passou perrengue ao invés de passar você mesmo</div>
+            <div class="target-container">
+                <h2 class="target-main-title" style="background: linear-gradient(145deg, #C99A30, #FEF1A2) !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; color: #C99A30 !important; text-transform: none !important; text-align: center; margin-bottom: 30px;">Bônus Exclusivo GRATUITO</h2>
+                
+                <div style="max-width: 800px; margin: 0 auto; padding: 40px; background: rgba(255, 255, 255, 0.08); border-radius: 20px; border: 2px solid rgba(254, 241, 162, 0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                    <div style="text-align: center; margin-bottom: 35px;">
+                        <h3 style="color: #FEF1A2; font-size: 28px; margin-bottom: 15px; font-weight: 700;">A Planilha Secreta que Economizou Milhões</h3>
+                        <p style="color: #C99A30; font-size: 20px; font-weight: 600; margin-bottom: 25px;">Usada em mais de 500 reformas profissionais - AGORA É SUA!</p>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 35px;">
+                        <div style="background: rgba(254, 241, 162, 0.1); padding: 25px; border-radius: 15px; border-left: 4px solid #C99A30;">
+                            <h4 style="color: #FEF1A2; font-size: 18px; margin-bottom: 15px; font-weight: 600;">Evite Prejuízos Devastadores</h4>
+                            <p style="color: white; font-size: 16px; line-height: 1.6;">A mesma ferramenta que salvou nossos clientes de perder R$ 50.000+ em reformas mal planejadas.</p>
+                        </div>
+                        <div style="background: rgba(254, 241, 162, 0.1); padding: 25px; border-radius: 15px; border-left: 4px solid #C99A30;">
+                            <h4 style="color: #FEF1A2; font-size: 18px; margin-bottom: 15px; font-weight: 600;">Metodologia Exclusiva</h4>
+                            <p style="color: white; font-size: 16px; line-height: 1.6;">Desenvolvida através de anos de experiência em vistorias - detecta problemas antes que virem pesadelo.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 35px;">
+                        <div style="background: rgba(254, 241, 162, 0.1); padding: 25px; border-radius: 15px; border-left: 4px solid #C99A30;">
+                            <h4 style="color: #FEF1A2; font-size: 18px; margin-bottom: 15px; font-weight: 600;">Controle Absoluto</h4>
+                            <p style="color: white; font-size: 16px; line-height: 1.6;">Nunca mais seja pego de surpresa - alertas automáticos quando você está gastando demais.</p>
+                        </div>
+                        <div style="background: rgba(254, 241, 162, 0.1); padding: 25px; border-radius: 15px; border-left: 4px solid #C99A30;">
+                            <h4 style="color: #FEF1A2; font-size: 18px; margin-bottom: 15px; font-weight: 600;">Visão Estratégica</h4>
+                            <p style="color: white; font-size: 16px; line-height: 1.6;">Veja exatamente onde cada real está sendo investido e tome decisões inteligentes.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; background: linear-gradient(135deg, rgba(201, 154, 48, 0.2), rgba(254, 241, 162, 0.2)); padding: 25px; border-radius: 15px; border: 1px solid rgba(254, 241, 162, 0.4);">
+                        <p style="color: #FEF1A2; font-size: 18px; font-weight: 600; margin-bottom: 10px;">ATENÇÃO: Ferramenta Profissional Liberada</p>
+                        <p style="color: white; font-size: 16px; line-height: 1.5;">Esta planilha custaria R$ 97 se vendida separadamente. Mas hoje você leva GRÁTIS junto com o guia. É nossa forma de garantir que sua reforma seja um sucesso absoluto!</p>
                     </div>
                 </div>
-
-                <div class="target-not">
-                    <h3 class="target-title-not">NÃO É PRA VOCÊ SE...</h3>
-                    <div class="target-list-not">
-                        <div class="target-item-not">Você gosta de viver perigosamente e acha que "vai dar certo"</div>
-                        <div class="target-item-not">Você prefere aprender "na marra" e contar vantagem depois dos perrengues</div>
-                        <div class="target-item-not">Você tem dinheiro sobrando e não liga de jogar fora algumas dezenas de milhares</div>
-                        <div class="target-item-not">Você acha que "jeitinho brasileiro" resolve tudo (spoiler: não resolve)</div>
-                        <div class="target-item-not">Você prefere confiar na lábia de vendedor ao invés de ter conhecimento próprio</div>
-                    </div>
-                </div>
             </div>
-
-            <div class="target-final">
-                <p><strong>A escolha é sua:</strong> Continuar sendo mais um que se complica ou fazer parte do grupo que se dá bem na reforma!</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
     <section class="pricing-section">
         <div class="pricing-container">
             <div class="pricing-header">
-                <h2 class="pricing-main-title">OLHA SÓ...</h2>
+                <h2 class="pricing-main-title">Olha Só...</h2>
                 <p class="pricing-subtitle">Você já viu o tanto de gente que se ferrou na reforma por não saber o que estava fazendo. Eu cansei de ver isso acontecer.</p>
                 <p class="pricing-subtitle">Por isso criei este guia com tudo que aprendi em 17 anos vendo reforma dar errado - e principalmente, vendo reforma dar CERTO.</p>
             </div>
@@ -1881,7 +2063,7 @@
             <div class="guarantee-hero">
                 <img src="images/Selo de Garantia 7 Dias.png" alt="Selo de Garantia 7 Dias" class="guarantee-seal">
                 <div class="guarantee-main">
-                    <h2 class="guarantee-title">GARANTIA TOTAL DE 7 DIAS</h2>
+                    <h2 class="guarantee-title">Garantia Total de 7 Dias</h2>
                     <p class="guarantee-subtitle">Teste por 7 dias. Se não gostar, devolvemos 100% do seu dinheiro.</p>
                 </div>
             </div>
@@ -1908,7 +2090,7 @@
     <section class="testimonials-section">
         <div class="testimonials-container">
             <div class="testimonials-header">
-                <h2 class="testimonials-title">VEJA O QUE NOSSOS CLIENTES ESTÃO DIZENDO</h2>
+                <h2 class="testimonials-title">Veja o que Nossos Clientes Estão Dizendo</h2>
                 <p class="testimonials-subtitle">Pessoas reais que evitaram prejuízos e tiveram sucesso em suas reformas</p>
             </div>
             
@@ -1984,4 +2166,4 @@
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
-</html> 
+</html>
