@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KETO DESBLOQUEADO · Guía Keto Inteligente — Déficit sin contar</title>
+  <meta name="description" content="Reglas claras, porciones en la mano, qué sí/qué no y déficit sin contar. Guía visual y práctica para aplicar el Protocolo Keto Inteligente con o sin el Protocolo 7D." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      /* Paleta Ayuno Desbloqueado (verdes) */
+      --g900:#0b3d2e; --g800:#115c43; --g700:#157a57; --g600:#1e976a; --g500:#28b07a;
+      --g400:#5bc596; --g300:#93dbb8; --g200:#c7efda; --g100:#e9fbf2; --white:#fff;
+      --ink900:#0f172a; --ink700:#1f2937; --ink500:#475569; --ink300:#94a3b8;
+      --shadow:0 14px 40px rgba(0,0,0,.10); --r:20px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--g100);color:var(--ink700)}
+    a{color:var(--g700);text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    /* HERO */
+    .hero{background:
+      radial-gradient(1200px 400px at 85% -20%, rgba(40,176,122,.20), transparent 60%),
+      linear-gradient(140deg, rgba(30,151,106,.10), rgba(40,176,122,.08));
+      border:1px solid rgba(17,92,67,.10);
+      padding:38px 22px;border-radius:26px;box-shadow:var(--shadow)}
+    .badge{display:inline-flex;gap:10px;align-items:center;background:var(--g200);color:var(--g800);
+           border-radius:999px;padding:8px 14px;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.3px}
+    h1{font-size:40px;line-height:1.04;margin:14px 0 6px;color:var(--g900);letter-spacing:-.6px}
+    .hero p{max-width:840px;color:var(--ink500);font-size:18px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .btn{border:none;border-radius:14px;padding:14px 18px;font-weight:800;cursor:pointer;display:inline-flex;gap:10px;align-items:center}
+    .btn-primary{background:var(--g700);color:#fff;box-shadow:0 8px 24px rgba(21,122,87,.25)}
+    .btn-ghost{background:transparent;border:2px solid var(--g300);color:var(--g800)}
+    /* NAV */
+    .nav{position:sticky;top:0;background:rgba(233,251,242,.9);backdrop-filter:blur(8px);z-index:10;border-bottom:1px solid var(--g200)}
+    .nav-inner{max-width:1100px;margin:0 auto;padding:10px 24px;display:flex;gap:14px;flex-wrap:wrap}
+    .nav a{font-weight:700;font-size:14px;padding:8px 10px;border-radius:10px}
+    .nav a:hover{background:var(--g200)}
+    /* SECTIONS */
+    section{margin-top:28px}
+    .card{background:#fff;border:1px solid rgba(17,92,67,.10);border-radius:var(--r);box-shadow:var(--shadow);padding:22px}
+    .title{margin:0 0 10px;color:var(--g900)}
+    .grid{display:grid;gap:18px}
+    @media(min-width:900px){.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:repeat(3,1fr)}}
+    .pill{display:inline-flex;gap:8px;align-items:center;background:var(--g100);border:1px solid var(--g300);color:var(--g800);border-radius:999px;padding:6px 10px;font-weight:800;font-size:12px}
+    .k-list{margin:10px 0 0;padding-left:18px}
+    .k-list li{margin:6px 0}
+    .callout{background:var(--g200);border-left:6px solid var(--g700);padding:14px;border-radius:12px;margin-top:10px}
+    .ok{color:var(--g700);font-weight:800}
+    .maybe{color:#e19715;font-weight:800}
+    .no{color:#b91c1c;font-weight:800}
+    table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid rgba(17,92,67,.12);border-radius:14px;overflow:hidden;background:#fff}
+    th,td{padding:12px 14px;border-bottom:1px solid rgba(17,92,67,.10);text-align:left}
+    th{background:var(--g200);color:var(--g900)}
+    tr:last-child td{border-bottom:none}
+    .chip{display:inline-flex;gap:6px;align-items:center;background:var(--g200);color:var(--g800);padding:4px 10px;border-radius:999px;font-weight:700;font-size:12px}
+    .check{color:var(--g700);font-weight:900}
+    .x{color:#b91c1c;font-weight:900}
+    .foot{margin:40px 0 16px;text-align:center;color:var(--ink300);font-size:12px}
+    .small{font-size:13px;color:var(--ink500)}
+    .code{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+          background:var(--g100);border:1px solid var(--g300);padding:8px 10px;border-radius:10px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- HERO -->
+    <header class="hero">
+      <span class="badge">KETO DESBLOQUEADO · Protocolo Keto Inteligente</span>
+      <h1>Guía Keto Inteligente — <br/>Reglas claras, porciones en la mano y <em>déficit sin contar</em></h1>
+      <p>
+        Aplica <strong>Keto</strong> de forma simple, real y compatible con el <strong>Protocolo 7D</strong>.
+        Aquí no vas a pesar comida ni usar apps: vas a decidir con la <strong>mano</strong>, con una
+        lista <strong>Verde · Amarilla · Roja</strong>, y con “atajos” para social/delivery.
+        El resultado: <strong>saciedad brutal</strong>, menos antojos, menos picos y grasa bajando.
+      </p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#inicio">Empezar ahora</a>
+        <a class="btn btn-ghost" href="#que-sí-no">Qué sí / qué no</a>
+      </div>
+    </header>
+
+    <!-- NAV -->
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="#inicio">Inicio rápido</a>
+        <a href="#porciones">Porciones en la mano</a>
+        <a href="#que-sí-no">Qué sí/qué no</a>
+        <a href="#plato">Construye tu plato</a>
+        <a href="#keto-ventana">Keto en Ventana</a>
+        <a href="#social">Social & Delivery</a>
+        <a href="#estancamientos">Estancamientos</a>
+        <a href="#compra">Lista de compra</a>
+        <a href="#batch">Batch 60’</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </nav>
+
+    <!-- INICIO RÁPIDO -->
+    <section id="inicio" class="card">
+      <h2 class="title">Inicio rápido (2 minutos)</h2>
+      <div class="grid two">
+        <div>
+          <ol class="k-list">
+            <li><strong>Elige tu ventana</strong>: 14/10 o 16/8 (según tu día real).</li>
+            <li><strong>Prepara la Bebida Llave</strong> (agua+minerales) para apagar “hambre falsa”.</li>
+            <li><strong>Define tu objetivo</strong>: <span class="chip">Bajar grasa</span> / <span class="chip">Rendimiento</span> / <span class="chip">Mantención</span>.</li>
+            <li><strong>Usa tu mano</strong> para calcular porciones (guía abajo).</li>
+            <li><strong>Arma tu plato</strong> con el método <span class="chip">1 · 2 · 0-1</span>: proteína — vegetales — carbo opcional mínimo.</li>
+          </ol>
+          <div class="callout"><strong>Regla madre:</strong> proteína primero, vegetales siempre, grasa buena al punto, <em>carbo muy bajo</em>. Todo dentro de la ventana.</div>
+        </div>
+        <div>
+          <p class="small"><strong>Nota de bienestar:</strong> esto es contenido educativo. Si tienes condición clínica, embarazo/lactancia o medicación, consulta a tu profesional.</p>
+          <p class="small">Compatibilidad total con el <strong>Protocolo 7D</strong>: puedes usar esta guía <em>dentro</em> de tus ventanas o inmediatamente <em>después</em> para sostener resultados.</p>
+          <div class="code">Lema: <strong>sin contar calorías ni dietas locas</strong> — decisiones rápidas con tu mano y la lista de colores.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORCIONES EN LA MANO -->
+    <section id="porciones" class="card">
+      <h2 class="title">Porciones en la mano — Déficit sin contar</h2>
+      <p>Usa tu mano como medidor natural. Ajusta +/– según hambre real, objetivo y actividad.</p>
+      <div class="grid three">
+        <div class="card">
+          <h3 class="title">Proteína (mano abierta)</h3>
+          <p>1 porción = <strong>tamaño de tu palma</strong> (alto y ancho) sin dedos.</p>
+          <ul class="k-list">
+            <li>Pollo, pavo, carne magra, pescado, atún, huevos (2–3 = 1 palma).</li>
+            <li><span class="ok">Base de cada comida</span>. Si entrenas fuerza, +½ palma extra.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="title">Vegetales (puño)</h3>
+          <p>1 porción = <strong>tu puño</strong>. Apunta a 2 puños por plato.</p>
+          <ul class="k-list">
+            <li>Hojas, brócoli, calabacín, pepino, coliflor, pimientos, champiñones.</li>
+            <li>Crudos o salteados con <em>grasa medida</em>.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="title">Grasa buena (pulgar)</h3>
+          <p>1 porción = <strong>la punta del pulgar</strong> (1 cda aprox.).</p>
+          <ul class="k-list">
+            <li>Aceite de oliva, mantequilla/ghee, palta, aceitunas, frutos secos.</li>
+            <li>Usa 1–2 porciones por comida; no “bañes” el plato.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout"><strong>Carbo opcional (mínimo):</strong> 0–3 “dedos” del puño (papa/batata/arroz/quinoa/legumbre) — <em>solo</em> si lo necesitas por actividad o adherencia.</div>
+    </section>
+
+    <!-- QUE SÍ / QUE NO -->
+    <section id="que-sí-no" class="card">
+      <h2 class="title">Qué sí / Qué no (lista Verde · Amarilla · Roja)</h2>
+      <div class="grid two">
+        <div>
+          <table>
+            <thead><tr><th>Lista</th><th>Alimentos</th><th>Notas</th></tr></thead>
+            <tbody>
+              <tr><td><span class="ok">VERDE</span></td><td>Huevos, pollo/pavo, pescado, carne magra, atún; hojas verdes, brócoli, coliflor, pepino, calabacín, champiñones; aceite de oliva, mantequilla/ghee, palta, aceitunas.</td><td>Base diaria. Sacia, baja picos.</td></tr>
+              <tr><td><span class="maybe">AMARILLA</span></td><td>Quesos curados, crema, yogur natural; frutos secos/semillas; legumbres cocidas; arroz/batata/papa en porción pequeña; frutas bajas en azúcar (frutillas, arándanos).</td><td>Usa con medida y según respuesta.</td></tr>
+              <tr><td><span class="no">ROJA</span></td><td>Azúcar, pan/harinas, postres, jugos, gaseosas, alcohol, fritos/ultraprocesados, salsas azucaradas.</td><td>Evita en keto. Si hay evento, aplica “modo social”.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h3 class="title">Reglas simples</h3>
+          <ul class="k-list">
+            <li>Proteína primero, vegetales siempre, grasa buena medida.</li>
+            <li>Evita mezclar <em>mucha</em> grasa + <em>mucho</em> carbo en el mismo plato.</li>
+            <li>Agua y electrolitos (Bebida Llave) para controlar antojo.</li>
+            <li>Café/té: sin azúcar ni cremas calóricas dentro de ventana cerrada.</li>
+          </ul>
+          <div class="callout"><strong>Recordatorio:</strong> la guía es “déficit sin contar”. Si te estancas, revisa porciones de grasa y “picoteos invisibles”.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONSTRUYE TU PLATO -->
+    <section id="plato" class="card">
+      <h2 class="title">Construye tu plato — Método 1 · 2 · 0–1</h2>
+      <div class="grid two">
+        <div>
+          <ol class="k-list">
+            <li><strong>1 palma de proteína</strong> (pollo/pescado/huevos/atún).</li>
+            <li><strong>2 puños de vegetales</strong> (mezcla de hojas + cocidos).</li>
+            <li><strong>0 a 1 porción pequeña</strong> de carbo opcional (si lo necesitas).</li>
+            <li><strong>1–2 porciones de grasa buena</strong> (pulgar) para sabor/saciedad.</li>
+          </ol>
+          <p class="small">Si entrenas fuerza o tienes hambre real, añade ½ palma de proteína extra o una porción pequeña de carbo <em>limpio</em>.</p>
+        </div>
+        <div>
+          <table>
+            <thead><tr><th>Objetivo</th><th>Proteína</th><th>Vegetales</th><th>Grasa</th><th>Carbo</th></tr></thead>
+            <tbody>
+              <tr><td>Bajar grasa</td><td>1–1.5 palmas</td><td>2+ puños</td><td>1 pulgar</td><td>0–½ porción</td></tr>
+              <tr><td>Rendimiento</td><td>1.5 palmas</td><td>2 puños</td><td>1–2 pulgares</td><td>½–1 porción</td></tr>
+              <tr><td>Mantenimiento</td><td>1 palma</td><td>2 puños</td><td>1–2 pulgares</td><td>0–½ porción</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- KETO EN VENTANA -->
+    <section id="keto-ventana" class="card">
+      <h2 class="title">Keto en Ventana — encaje perfecto con 7D</h2>
+      <div class="grid two">
+        <div>
+          <h3 class="title">Tu día keto simple</h3>
+          <ul class="k-list">
+            <li><strong>Mañana:</strong> agua + Bebida Llave. Café negro si te va bien.</li>
+            <li><strong>Hora crítica (≈17 h):</strong> 200–300 ml Bebida Llave. Hambre 911 si hay ansiedad.</li>
+            <li><strong>Abrir ventana:</strong> Rompe-Llave keto (plato 1·2·0–1).</li>
+            <li><strong>Segunda comida:</strong> plato keto liviano o sopa proteica.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="title">Señales de ajuste</h3>
+          <ul class="k-list">
+            <li><span class="check">✔</span> Saciedad 3–4 h: vas bien.</li>
+            <li><span class="x">✖</span> Sueño pesado o reflujo: baja grasa de la noche.</li>
+            <li><span class="x">✖</span> Antojo dulce constante: sube proteína o usa frutos rojos (pequeña porción).</li>
+          </ul>
+          <div class="callout">Siempre prioriza <strong>adherencia</strong>. Mejor un plato keto simple que “perfección” imposible.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL & DELIVERY -->
+    <section id="social" class="card">
+      <h2 class="title">Social & Delivery — qué pedir sin arruinar el plan</h2>
+      <div class="grid three">
+        <div class="card">
+          <h3 class="title">Parrilla / Asador</h3>
+          <ul class="k-list">
+            <li>Carne/pollo/pescado a la plancha.</li>
+            <li>Ensalada grande + aceite/limón aparte.</li>
+            <li>Evita pan/salsas dulces; papa solo si necesitas y en porción chica.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="title">Sushi / Asiático</h3>
+          <ul class="k-list">
+            <li>Sashimi o roll sin arroz.</li>
+            <li>Salteados con verduras (pide menos salsa).</li>
+            <li>Evita tempuras y azucarados.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="title">Rápido / Delivery</h3>
+          <ul class="k-list">
+            <li>Ensalada con proteína + aderezo aparte.</li>
+            <li>Bowl “sin arroz” + extra vegetales.</li>
+            <li>Hamburguesa <em>sin pan</em> + ensalada.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout"><strong>Modo Social:</strong> si tomas alcohol, elige <em>solo</em> vino seco o destilado con soda, 1–2 copas máx., y acompaña con proteína/verduras.</div>
+    </section>
+
+    <!-- ESTANCAMIENTOS -->
+    <section id="estancamientos" class="card">
+      <h2 class="title">Si te estancas — 6 palancas para reactivar</h2>
+      <ol class="k-list">
+        <li><strong>Electrolitos al día</strong>: 2 botellas de Bebida Llave (evita “hambre por sed”).</li>
+        <li><strong>Proteína al frente</strong>: sube a 1.5 palmas si tienes mucha hambre.</li>
+        <li><strong>Grasa medida</strong>: reduce 1 pulgar en la noche por 3–4 días.</li>
+        <li><strong>Carbo opcional</strong>: déjalo en 0–½ porción; úsalo después de fuerza.</li>
+        <li><strong>Ventana consistente</strong>: fija horario 5 días seguidos.</li>
+        <li><strong>Movimiento 3X</strong>: fuerza corta + cardio breve + movilidad (ver Upsell 2).</li>
+      </ol>
+    </section>
+
+    <!-- LISTA DE COMPRA -->
+    <section id="compra" class="card">
+      <h2 class="title">Lista de compra — pasillos</h2>
+      <div class="grid three">
+        <div class="card">
+          <h3 class="title">Proteínas</h3>
+          <ul class="k-list">
+            <li>Pollo, pavo, carne magra, pescado, atún en agua.</li>
+            <li>Huevos, queso curado, yogur natural (opcional).</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="title">Verduras & grasas</h3>
+          <ul class="k-list">
+            <li>Hojas, brócoli, coliflor, calabacín, pepino, pimientos.</li>
+            <li>Aceite de oliva, mantequilla/ghee, palta, aceitunas, frutos secos.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="title">Básicos</h3>
+          <ul class="k-list">
+            <li>Sal marina fina, bicarbonato, limón (Bebida Llave).</li>
+            <li>Especias, vinagre, mostaza, cacao amargo.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- BATCH 60 -->
+    <section id="batch" class="card">
+      <h2 class="title">Batch 60’ — 3 bases para varios días</h2>
+      <div class="grid two">
+        <div>
+          <ol class="k-list">
+            <li><strong>Horno 1</strong>: bandeja de pollo (sal/pimienta/oliva) + bandeja de brócoli/calabacín.</li>
+            <li><strong>Olla</strong>: huevos duros (8–10) y caldo simple.</li>
+            <li><strong>Frascos</strong>: aderezo oliva+limón y encurtido rápido de pepino.</li>
+          </ol>
+        </div>
+        <div>
+          <p class="small"><strong>Cómo usar:</strong> arma bowls en 3 min: pollo + hojas + brócoli + aderezo; o huevos + ensalada; o pescado plancha + verduras.</p>
+          <div class="callout">La constancia no es fuerza de voluntad: es tener <strong>bases listas</strong>.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="card">
+      <h2 class="title">Preguntas frecuentes</h2>
+      <details>
+        <summary><strong>¿Tengo que contar calorías?</strong></summary>
+        <p>No. Usamos <em>déficit sin contar</em> con porciones en la mano y lista de colores.</p>
+      </details>
+      <details>
+        <summary><strong>¿Puedo hacer ayuno y keto a la vez?</strong></summary>
+        <p>Sí. “Keto en Ventana” encaja perfecto con 14/10 o 16/8. Ajusta porciones según hambre y actividad.</p>
+      </details>
+      <details>
+        <summary><strong>¿Qué hago si me da ansiedad a las 17 h?</strong></summary>
+        <p>200–300 ml de Bebida Llave y aplica <strong>Hambre 911</strong>. Si persiste, abre con Rompe-Llave keto.</p>
+      </details>
+      <details>
+        <summary><strong>¿Lácteos sí o no?</strong></summary>
+        <p>Opción <em>amarilla</em>: úsalos con medida. Si notas hinchazón, reduce por una semana.</p>
+      </details>
+    </section>
+
+    <p class="foot">
+      © Ayuno Desbloqueado. Soporte: ayunodesbloqueado@gmail.com · WhatsApp +55 61 99510-1582 — Programa educativo de bienestar.
+    </p>
+  </div>
+</body>
+</html>
