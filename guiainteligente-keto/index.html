@@ -54,6 +54,15 @@
     th,td{padding:12px 14px;border-bottom:1px solid rgba(17,92,67,.10);text-align:left}
     th{background:var(--g200);color:var(--g900)}
     tr:last-child td{border-bottom:none}
+    
+    /* Responsividade para tabelas */
+    .table-container{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:14px}
+    @media(max-width:768px){
+      .table-container{margin:0 -22px;border-radius:0}
+      table{border-radius:0;font-size:14px}
+      th,td{padding:8px 10px;font-size:13px;line-height:1.4}
+      th{font-size:12px;font-weight:800}
+    }
     .chip{display:inline-flex;gap:6px;align-items:center;background:var(--g200);color:var(--g800);padding:4px 10px;border-radius:999px;font-weight:700;font-size:12px}
     .check{color:var(--g700);font-weight:900}
     .x{color:#b91c1c;font-weight:900}
@@ -61,6 +70,25 @@
     .small{font-size:13px;color:var(--ink500)}
     .code{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
           background:var(--g100);border:1px solid var(--g300);padding:8px 10px;border-radius:10px}
+    
+    /* Media queries para responsividade mobile */
+    @media(max-width:768px){
+      .container{padding:16px}
+      .hero{padding:24px 16px}
+      h1{font-size:28px;line-height:1.1}
+      .hero p{font-size:16px}
+      .nav-inner{padding:8px 16px;gap:8px}
+      .nav a{font-size:13px;padding:6px 8px}
+      .card{padding:16px}
+      .grid.two{grid-template-columns:1fr}
+      .grid.three{grid-template-columns:1fr}
+      .cta{flex-direction:column}
+      .btn{width:100%;justify-content:center}
+      .k-list{padding-left:16px}
+      .callout{padding:12px;font-size:14px}
+      .pill,.chip{font-size:11px;padding:4px 8px}
+      details summary{font-size:14px;padding:8px 0}
+    }
   </style>
 </head>
 <body>
@@ -157,14 +185,16 @@
       <h2 class="title">Qué sí / Qué no (lista Verde · Amarilla · Roja)</h2>
       <div class="grid two">
         <div>
-          <table>
-            <thead><tr><th>Lista</th><th>Alimentos</th><th>Notas</th></tr></thead>
-            <tbody>
-              <tr><td><span class="ok">VERDE</span></td><td>Huevos, pollo/pavo, pescado, carne magra, atún; hojas verdes, brócoli, coliflor, pepino, calabacín, champiñones; aceite de oliva, mantequilla/ghee, palta, aceitunas.</td><td>Base diaria. Sacia, baja picos.</td></tr>
-              <tr><td><span class="maybe">AMARILLA</span></td><td>Quesos curados, crema, yogur natural; frutos secos/semillas; legumbres cocidas; arroz/batata/papa en porción pequeña; frutas bajas en azúcar (frutillas, arándanos).</td><td>Usa con medida y según respuesta.</td></tr>
-              <tr><td><span class="no">ROJA</span></td><td>Azúcar, pan/harinas, postres, jugos, gaseosas, alcohol, fritos/ultraprocesados, salsas azucaradas.</td><td>Evita en keto. Si hay evento, aplica “modo social”.</td></tr>
-            </tbody>
-          </table>
+          <div class="table-container">
+            <table>
+              <thead><tr><th>Lista</th><th>Alimentos</th><th>Notas</th></tr></thead>
+              <tbody>
+                <tr><td><span class="ok">VERDE</span></td><td>Huevos, pollo/pavo, pescado, carne magra, atún; hojas verdes, brócoli, coliflor, pepino, calabacín, champiñones; aceite de oliva, mantequilla/ghee, palta, aceitunas.</td><td>Base diaria. Sacia, baja picos.</td></tr>
+                <tr><td><span class="maybe">AMARILLA</span></td><td>Quesos curados, crema, yogur natural; frutos secos/semillas; legumbres cocidas; arroz/batata/papa en porción pequeña; frutas bajas en azúcar (frutillas, arándanos).</td><td>Usa con medida y según respuesta.</td></tr>
+                <tr><td><span class="no">ROJA</span></td><td>Azúcar, pan/harinas, postres, jugos, gaseosas, alcohol, fritos/ultraprocesados, salsas azucaradas.</td><td>Evita en keto. Si hay evento, aplica "modo social".</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <div>
           <h3 class="title">Reglas simples</h3>
@@ -193,14 +223,16 @@
           <p class="small">Si entrenas fuerza o tienes hambre real, añade ½ palma de proteína extra o una porción pequeña de carbo <em>limpio</em>.</p>
         </div>
         <div>
-          <table>
-            <thead><tr><th>Objetivo</th><th>Proteína</th><th>Vegetales</th><th>Grasa</th><th>Carbo</th></tr></thead>
-            <tbody>
-              <tr><td>Bajar grasa</td><td>1–1.5 palmas</td><td>2+ puños</td><td>1 pulgar</td><td>0–½ porción</td></tr>
-              <tr><td>Rendimiento</td><td>1.5 palmas</td><td>2 puños</td><td>1–2 pulgares</td><td>½–1 porción</td></tr>
-              <tr><td>Mantenimiento</td><td>1 palma</td><td>2 puños</td><td>1–2 pulgares</td><td>0–½ porción</td></tr>
-            </tbody>
-          </table>
+          <div class="table-container">
+            <table>
+              <thead><tr><th>Objetivo</th><th>Proteína</th><th>Vegetales</th><th>Grasa</th><th>Carbo</th></tr></thead>
+              <tbody>
+                <tr><td>Bajar grasa</td><td>1–1.5 palmas</td><td>2+ puños</td><td>1 pulgar</td><td>0–½ porción</td></tr>
+                <tr><td>Rendimiento</td><td>1.5 palmas</td><td>2 puños</td><td>1–2 pulgares</td><td>½–1 porción</td></tr>
+                <tr><td>Mantenimiento</td><td>1 palma</td><td>2 puños</td><td>1–2 pulgares</td><td>0–½ porción</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
