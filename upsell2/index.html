@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Protocolo 7D | Ayuno Desbloqueado</title>
+  <link rel="icon" type="image/png" href="../images/favicon-ayuno.png" />
+  <style>
+    :root {
+      --yellow: #f9a825;
+      --yellow-dark: #f57f17;
+      --text: #333;
+      --bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.15);
+    }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+      color: #111;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    .page {
+      width: 100%;
+      max-width: 980px;
+      padding: 32px 16px 48px;
+    }
+    .alert-banner {
+      background: var(--yellow);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 16px 20px;
+      box-shadow: 0 6px 20px var(--shadow);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transform-origin: center;
+      animation: zoomPulse 1.8s ease-in-out infinite;
+      max-width: 100%;
+      margin: 0 auto 32px auto;
+    }
+    @media (max-width: 768px) {
+      .alert-banner {
+        padding: 14px 16px;
+        gap: 10px;
+        flex-direction: column;
+        text-align: center;
+      }
+      .alert-title {
+        font-size: 16px;
+      }
+    }
+    .alert-icon { font-size: 20px; line-height: 1; }
+    .alert-content { display: grid; gap: 6px; }
+    .alert-title {
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: 0.2px;
+    }
+    .section-title {
+      margin: 28px 0 0;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 800;
+      color: #333;
+    }
+    @keyframes zoomPulse {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+  </style>
+  <!-- Meta Pixel Code -->
+  <script>
+    !(function(f,b,e,v,n,t,s){
+      if(f.fbq) return; n=f.fbq=function(){ n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments) };
+      if(!f._fbq) f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0'; n.queue=[];
+      t=b.createElement(e); t.async=!0; t.src=v;
+      s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s);
+    })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '804795828859528');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=804795828859528&ev=PageView&noscript=1" />
+  </noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+<body>
+  <main class="page">
+    <section class="alert-banner" role="alert" aria-live="polite">
+      <div class="alert-icon">🔒</div>
+      <div class="alert-content">
+        <div class="alert-title">ACCESO VIP: Este es el último paso que solo mis mejores clientes ven.</div>
+      </div>
+    </section>
+
+    <h1 class="section-title">Escucha ahora el secreto para que tu resultado sea definitivo. 👇</h1>
+  </main>
+</body>
+</html>
