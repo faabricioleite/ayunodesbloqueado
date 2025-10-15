@@ -109,14 +109,32 @@
 
     <h1 class="section-title">Mira abajo tu primera clase 👇</h1>
     
+    <!-- PANDA VIDEO - Video Player -->
+    <div style="text-align: center; margin: 20px 0;">
+      <iframe id="panda-394099c2-9f13-4cfc-8e2b-37af1d078c45" 
+              src="https://player-vz-da77d45b-cd8.tv.pandavideo.com.br/embed/?v=394099c2-9f13-4cfc-8e2b-37af1d078c45" 
+              style="border:none; max-width: 100%; height: auto; aspect-ratio: 16/9;" 
+              allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" 
+              allowfullscreen=true 
+              width="720" 
+              height="405" 
+              fetchpriority="high">
+      </iframe>
+    </div>
+    <!-- PANDA VIDEO - Video Player -->
+    
     <!-- HOTMART - Sales Funnel Widget -->
     <!--- sales funnel container --->
-    <div id="hotmart-sales-funnel"></div>
+    <div id="hotmart-sales-funnel" style="display: none;"></div>
     
     <!--- script load and setup --->
     <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
     <script>
-    checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+    // Aguardar 2 minutos e 40 segundos (160 segundos) antes de mostrar o widget
+    setTimeout(function() {
+      document.getElementById('hotmart-sales-funnel').style.display = 'block';
+      checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel');
+    }, 160000); // 160000 ms = 2 minutos e 40 segundos
     </script>
     <!-- HOTMART - Sales Funnel Widget -->
   </main>
