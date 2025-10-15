@@ -102,14 +102,32 @@
 
     <h1 class="section-title">Escucha ahora el secreto para que tu resultado sea definitivo. 👇</h1>
     
+    <!-- PANDA VIDEO - Video Player -->
+    <div style="text-align: center; margin: 20px 0;">
+      <iframe id="panda-3ee366f5-79a2-4478-ad42-a4706174e1fb" 
+              src="https://player-vz-da77d45b-cd8.tv.pandavideo.com.br/embed/?v=3ee366f5-79a2-4478-ad42-a4706174e1fb" 
+              style="border:none; max-width: 100%; height: auto; aspect-ratio: 3/4;" 
+              allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" 
+              allowfullscreen=true 
+              width="720" 
+              height="960" 
+              fetchpriority="high">
+      </iframe>
+    </div>
+    <!-- PANDA VIDEO - Video Player -->
+    
     <!-- HOTMART - Sales Funnel Widget -->
     <!--- sales funnel container --->
-    <div id="hotmart-sales-funnel"></div>
+    <div id="hotmart-sales-funnel" style="display: none;"></div>
     
     <!--- script load and setup --->
     <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
     <script>
-    checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+    // Aguardar 2 minutos e 35 segundos (155 segundos) antes de mostrar o widget
+    setTimeout(function() {
+      document.getElementById('hotmart-sales-funnel').style.display = 'block';
+      checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel');
+    }, 155000); // 155000 ms = 2 minutos e 35 segundos
     </script>
     <!-- HOTMART - Sales Funnel Widget -->
   </main>
