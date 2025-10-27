@@ -10,15 +10,19 @@
       --red: #d32f2f;
       --red-dark: #b71c1c;
       --text: #ffffff;
-      --bg: #ffffff;
+      --bg: #000000;
       --shadow: rgba(0, 0, 0, 0.15);
+      --green: #4CAF50;
+      --green-dark: #388E3C;
+      --green-light: #66BB6A;
     }
+    .hidden-by-delay { display: none; }
     html, body { height: 100%; }
     body {
       margin: 0;
       background: var(--bg);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
-      color: #111;
+      color: #fff;
       display: flex;
       align-items: flex-start;
       justify-content: center;
@@ -32,9 +36,10 @@
     /* Seção Hero com Background */
     .hero-section {
       background-image: url('../images/bg-v1.png');
-      background-size: cover;
-      background-position: center;
+      background-size: 100% auto;
+      background-position: center top;
       background-repeat: no-repeat;
+      width: 100vw;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -43,6 +48,7 @@
       text-align: center;
       position: relative;
       padding: 40px 20px;
+      margin-left: calc(-50vw + 50%);
     }
     
     .hero-section::before {
@@ -52,7 +58,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.4);
       z-index: 1;
     }
     
@@ -66,7 +72,8 @@
     
     /* Alerta Banner */
     .alert-banner {
-       background: var(--red);
+       background: rgba(255, 0, 0, 0.5);
+       backdrop-filter: blur(10px);
        color: var(--text);
        border-radius: 10px;
        padding: 16px 20px;
@@ -109,6 +116,10 @@
       opacity: 0.95;
     }
     
+    .alert-subtitle .bold-text {
+      font-weight: bold;
+    }
+    
     /* Video Container */
     .video-container {
       text-align: center;
@@ -125,17 +136,163 @@
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     }
     
+    /* Botão CTA */
+     .cta-button {
+       display: inline-block;
+       background: linear-gradient(135deg, var(--green), var(--green-light), var(--green-dark));
+       background-size: 200% 200%;
+       color: white;
+       text-decoration: none;
+       padding: 18px 40px;
+       border-radius: 50px;
+       font-weight: bold;
+       font-size: 18px;
+       text-align: center;
+       margin: 30px auto 20px;
+       position: relative;
+       overflow: hidden;
+       box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+       animation: buttonPulse 2s ease-in-out infinite, gradientShift 3s ease-in-out infinite;
+       transition: 0.4s;
+       cursor: pointer;
+       border: none;
+     }
+     
+     .cta-button:hover {
+       box-shadow: 7px 5px 56px -14px #4CAF50;
+     }
+     
+     .cta-button:active {
+       transform: scale(0.97);
+       box-shadow: 7px 5px 56px -10px #4CAF50;
+     }
+    
+    .cta-container {
+      text-align: center;
+      margin: 30px auto;
+    }
+    
+    /* Imagem Compritia */
+    .compritia-container {
+      text-align: center;
+      margin: 20px auto;
+    }
+    
+    .compritia-container img {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    
     @keyframes zoomPulse {
       0%   { transform: scale(1); }
       50%  { transform: scale(1.05); }
       100% { transform: scale(1); }
     }
     
+    @keyframes buttonPulse {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+    
+    @keyframes gradientShift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    /* Garantia Section */
+    .garantia-section {
+      text-align: center;
+      margin: 40px auto;
+      max-width: 600px;
+      position: relative;
+    }
+    
+    .garantia-image-container {
+      margin: 30px auto;
+    }
+    
+    .garantia-image-container img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+    }
+    
+    .garantia-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+      padding: 30px 25px;
+      margin: 30px auto;
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 2;
+    }
+
+    .garantia-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 25px;
+      padding: 2px;
+      background: linear-gradient(135deg, #D19D54, #66451D);
+      -webkit-mask: 
+          linear-gradient(#fff 0 0) content-box, 
+          linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      z-index: -1;
+    }
+    
+    .garantia-title {
+      background: linear-gradient(135deg, #D19D54, #66451D);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0 0 20px 0;
+      text-align: center;
+    }
+    
+    .garantia-text {
+      color: #ffffff;
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 15px 0;
+      text-align: center;
+    }
+    
+    .garantia-blur-circle {
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400px;
+      height: 400px;
+      background: linear-gradient(135deg, #D19D54, #66451D);
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.4;
+      z-index: 1;
+    }
+
+    
     @media (max-width: 768px) {
-      .hero-section {
-        min-height: 100vh;
-        padding: 20px 15px;
-      }
+        .hero-section {
+          min-height: 100vh;
+          padding: 20px 15px;
+          margin-left: calc(-50vw + 50%);
+          width: 100vw;
+          background-size: 100% auto;
+          background-position: center top;
+        }
       
       .video-container {
         margin: 15px auto;
@@ -144,6 +301,44 @@
       .video-container iframe {
         width: 100%;
         max-width: 100%;
+      }
+      
+      .cta-button {
+        padding: 16px 30px;
+        font-size: 16px;
+        margin: 25px auto 15px;
+      }
+      
+      .compritia-container img {
+        max-width: 320px;
+      }
+      
+      .garantia-section {
+        margin: 30px auto;
+        max-width: 90%;
+      }
+      
+      .garantia-image-container img {
+        max-width: 250px;
+      }
+      
+      .garantia-card {
+        padding: 25px 20px;
+        margin: 25px auto;
+      }
+      
+      .garantia-title {
+        font-size: 20px;
+      }
+      
+      .garantia-text {
+        font-size: 14px;
+      }
+      
+      .garantia-blur-circle {
+        width: 150px;
+        height: 150px;
+        bottom: -40px;
       }
     }
   </style>
@@ -165,14 +360,14 @@
 </head>
 <body>
   <!-- Seção Hero com Background -->
-  <section class="hero-section">
+  <section class="hero-section hidden-by-delay">
     <div class="hero-content">
       <!-- Alerta Banner -->
       <section class="alert-banner" role="alert" aria-live="polite">
         <div class="alert-icon">⚠️</div>
         <div class="alert-content">
           <div class="alert-title">¡Atención!</div>
-          <div class="alert-subtitle">Lo que vas a ver ahora es la presentación que la industria alimentaria no quiere que veas. Haz clic para reproducir.</div>
+          <div class="alert-subtitle">Lo que vas a ver ahora es la presentación que la industria alimentaria no quiere que veas. <span class="bold-text">Haz clic para reproducir.</span></div>
         </div>
       </section>
 
@@ -189,7 +384,387 @@
         </iframe>
       </div>
       <!-- PANDA VIDEO - Video Player -->
+      
+      <!-- Botão CTA -->
+      <div class="cta-container hidden-by-delay">
+        <a href="https://pay.hotmart.com/H102526944Q?checkoutMode=10" class="cta-button" target="_blank">
+          Desbloquear Mi Acceso Inmediato
+        </a>
+      </div>
+      
+      <!-- Imagem Compritia -->
+      <div class="compritia-container hidden-by-delay">
+        <img src="../images/compritia.png" alt="Compritia" />
+      </div>
+      
+      <!-- Garantia Section -->
+      <div class="garantia-section hidden-by-delay">
+        <!-- Garantia Image -->
+        <div class="garantia-image-container">
+          <img src="../images/garantia7dias.png" alt="7 días de garantía" />
+        </div>
+        
+        <!-- Garantia Card -->
+        <div class="garantia-card">
+          <h3 class="garantia-title">7 días de garantía incondicional</h3>
+          <p class="garantia-text">
+            Experimenta la Dieta del Cazador por 7 días y si no te gusta, ¡te devolvemos toda tu inversión!
+          </p>
+          <p class="garantia-text">
+            Pago 100% seguro procesado por Hotmart, plataforma líder en ventas de productos digitales en América Latina.
+          </p>
+        </div>
+        
+        <!-- Blurred Circle -->
+        <div class="garantia-blur-circle"></div>
+      </div>
+
+      <!-- Carousel Section -->
+      <div class="carousel-section hidden-by-delay">
+        <h2 class="carousel-title">
+          <span class="gradient-text">Imagina tu foto aquí también</span> 🔥
+        </h2>
+        <div class="carousel-container">
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src="../images/PS_-11.png" alt="Carousel Image 11"></div>
+            <div class="carousel-slide"><img src="../images/PS_-4.png" alt="Carousel Image 4"></div>
+            <div class="carousel-slide"><img src="../images/PS_-5.png" alt="Carousel Image 5"></div>
+            <div class="carousel-slide"><img src="../images/PS_-6.png" alt="Carousel Image 6"></div>
+            <div class="carousel-slide"><img src="../images/PS_-9.png" alt="Carousel Image 9"></div>
+            <div class="carousel-slide"><img src="../images/PS_-10.png" alt="Carousel Image 10"></div>
+            <div class="carousel-slide"><img src="../images/PS_.png" alt="Carousel Image 0"></div>
+            <div class="carousel-slide"><img src="../images/PS_-1.png" alt="Carousel Image 1"></div>
+            <div class="carousel-slide"><img src="../images/PS_-2.png" alt="Carousel Image 2"></div>
+            <div class="carousel-slide"><img src="../images/PS_-3.png" alt="Carousel Image 3"></div>
+            <div class="carousel-slide"><img src="../images/PS_-7.png" alt="Carousel Image 7"></div>
+            <div class="carousel-slide"><img src="../images/PS_-8.png" alt="Carousel Image 8"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hunter Badge Section -->
+      <div class="hunter-badge-section hidden-by-delay">
+        <div class="hunter-badge-image-container">
+          <img src="../images/id-soy-cazadora.png" alt="Soy Cazadora" />
+        </div>
+        <h2 class="hunter-badge-title">
+          <span class="gradient-text">¡Toma tu insignia de cazador(a) y ven conmigo!</span> ⚡️
+        </h2>
+        <div class="price-section hidden-by-delay">
+          <div class="price-text">
+            <p>DE <span class="price-old">$100</span></p>
+            <p>POR SOLO</p>
+          </div>
+          <div class="price-amount">
+            <span class="price-currency">$</span>
+            <span class="price-value">9.99</span>
+          </div>
+        </div>
+        <div class="cta-container">
+          <a href="https://pay.hotmart.com/H102526944Q?checkoutMode=10" class="cta-button" target="_blank">
+            Desbloquear Mi Acceso Inmediato
+          </a>
+        </div>
+        <div class="alert-banner-small hidden-by-delay">
+          <div class="alert-content-small">
+            <div class="alert-subtitle-small">En la página de pago verás el precio convertido a tu moneda.</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
+
+  <style>
+    .carousel-section {
+      text-align: center;
+      margin: 60px auto;
+      max-width: 90%;
+    }
+    .carousel-title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+    .carousel-title .gradient-text {
+      background: linear-gradient(135deg, #D19D54, #66451D);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .carousel-container {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+    }
+    .carousel-track {
+      display: flex;
+      width: calc(700px * 24); /* 12 images * 2 for looping */
+      animation: scroll 48s linear infinite;
+    }
+    .carousel-slide {
+      width: 700px;
+      flex-shrink: 0;
+      padding: 0 10px;
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 700px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-700px * 12)); }
+    }
+
+    .hunter-badge-section {
+      text-align: center;
+      margin: 60px auto;
+    }
+    .hunter-badge-image-container {
+      margin-bottom: 30px;
+    }
+    .hunter-badge-image-container img {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+    }
+    .hunter-badge-title .gradient-text {
+      background: linear-gradient(135deg, #D19D54, #66451D);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .price-section {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 25px;
+      margin: 40px auto;
+      max-width: 400px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+      }
+      50% {
+        box-shadow: 0 8px 32px 0 rgba(209, 157, 84, 0.3);
+      }
+      100% {
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .price-text {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .price-text p {
+      margin: 5px 0;
+      font-size: 18px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .price-old {
+      color: #ff4d4d;
+      text-decoration: line-through;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .price-amount {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #28a745, #218838);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .price-currency {
+      font-size: 36px;
+      font-weight: 700;
+      margin-right: 5px;
+    }
+    .price-value {
+      font-size: 72px;
+      font-weight: 800;
+    }
+    .alert-banner-small {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 15px 20px;
+      margin-top: 20px;
+      font-size: 14px;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .alert-subtitle-small {
+      font-size: 12px;
+      color: #fff;
+    }
+
+    /* Toast Notification */
+    .toast-container {
+          position: fixed;
+          bottom: 20px;
+          left: 20px;
+          background-color: #28a745;
+          color: #fff;
+          padding: 15px 20px;
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          z-index: 1000;
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .toast-container.show {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .toast-icon {
+          font-size: 20px;
+          margin-right: 15px;
+          color: #fff;
+        }
+
+    .toast-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .toast-title {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .toast-message {
+      font-size: 14px;
+    }
+  </style>
+
+    <!-- Toast Notification -->
+    <div id="toast-notification" class="toast-container">
+      <div class="toast-icon">&#10003;</div>
+      <div class="toast-content">
+        <div class="toast-title">Nueva compra confirmada</div>
+        <div class="toast-message"></div>
+      </div>
+    </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const track = document.querySelector(".carousel-track");
+      const slides = Array.from(track.children);
+      slides.forEach(slide => {
+        const clone = slide.cloneNode(true);
+        track.appendChild(clone);
+      });
+
+      const notifications = [
+        { name: "Sofía G.", city: "Ciudad de México", country: "México" },
+        { name: "Mariana R.", city: "Bucaramanga", country: "Colombia" },
+        { name: "Daniela V.", city: "Cali", country: "Colombia" },
+        { name: "Carmen S.", city: "Sevilla", country: "España" },
+        { name: "Camila P.", city: "Puebla", country: "México" },
+        { name: "Catalina O.", city: "Ciudad de México", country: "México" },
+        { name: "Maria R.", city: "Miami", country: "Florida" },
+        { name: "Martina F.", city: "Buenos Aires", country: "Argentina" },
+        { name: "Juan José P.", city: "Cartagena", country: "Colombia" },
+        { name: "Facundo G.", city: "Córdoba", country: "Argentina" },
+        { name: "Sofía R.", city: "San Juan", country: "Puerto Rico" },
+        { name: "Agustín S.", city: "Punta del Este", country: "Uruguay" },
+        { name: "Valentina M.", city: "Medellín", country: "Colombia" },
+        { name: "Isabella L.", city: "Guadalajara", country: "México" },
+        { name: "Lucas G.", city: "Santiago", country: "Chile" },
+        { name: "Mateo R.", city: "Bogotá", country: "Colombia" },
+        { name: "Elena V.", city: "Madrid", country: "España" },
+        { name: "Lucía H.", city: "Monterrey", country: "México" },
+        { name: "Emiliano N.", city: "Lima", country: "Perú" },
+        { name: "Julieta C.", city: "Rosario", country: "Argentina" },
+        { name: "Benjamín T.", city: "Santo Domingo", country: "República Dominicana" },
+        { name: "Gabriela A.", city: "Quito", country: "Equador" },
+        { name: "Leonardo P.", city: "Lisboa", country: "Portugal" },
+        { name: "Valeria Q.", city: "Barranquilla", country: "Colombia" },
+        { name: "Diego S.", city: "Tijuana", country: "México" },
+        { name: "Ximena I.", city: "Arequipa", country: "Perú" },
+        { name: "Miguel Ángel F.", city: "Barcelona", country: "España" },
+        { name: "Renata B.", city: "Cancún", country: "México" },
+        { name: "Sebastián E.", city: "Viña del Mar", country: "Chile" },
+        { name: "Victoria J.", city: "Bogotá", country: "Colombia" },
+        { name: "Alejandro M.", city: "Los Angeles", country: "EUA" },
+        { name: "Paula G.", city: "Montevideo", country: "Uruguay" },
+        { name: "Andrés C.", city: "Guayaquil", country: "Equador" },
+        { name: "Fernanda L.", city: "Ciudad de Panamá", country: "Panamá" },
+        { name: "Ricardo T.", city: "San José", country: "Costa Rica" },
+        { name: "Carolina V.", city: "Ponce", country: "Puerto Rico" },
+        { name: "Javier R.", city: "Valencia", country: "España" },
+        { name: "Adriana P.", city: "Cúcuta", country: "Colombia" },
+        { name: "Francisco H.", city: "León", country: "México" },
+        { name: "Laura S.", city: "Mendoza", country: "Argentina" },
+        { name: "Carlos G.", city: "Punta Cana", country: "República Dominicana" },
+        { name: "Ana Sofía L.", city: "Cuenca", country: "Equador" },
+        { name: "Esteban Z.", city: "Porto", country: "Portugal" },
+        { name: "Daniela R.", city: "Santa Marta", country: "Colombia" },
+        { name: "José M.", city: "Mérida", country: "México" },
+        { name: "Gabriela C.", city: "Valparaíso", country: "Chile" },
+        { name: "Luis D.", city: "Trujillo", country: "Perú" },
+        { name: "Verónica A.", city: "Málaga", country: "España" },
+        { name: "Patricio N.", city: "Querétaro", country: "México" },
+        { name: "Natalia B.", city: "Pereira", country: "Colombia" }
+      ];
+
+      const toast = document.getElementById('toast-notification');
+      const toastMessage = toast.querySelector('.toast-message');
+      let currentIndex = 0;
+
+      function showNotification(index) {
+        const notification = notifications[index];
+        toastMessage.innerHTML = `<b>${notification.name}</b> desde ${notification.city}, ${notification.country}.`;
+        toast.classList.add('show');
+
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 5000); // Hide after 5 seconds
+      }
+
+      function scheduleNextNotification() {
+        if (currentIndex >= notifications.length) {
+          currentIndex = 0; // Loop
+        }
+
+        let delay;
+        if (currentIndex === 0) {
+          delay = 390000; // 390 seconds for the first one
+        } else {
+          delay = Math.floor(Math.random() * 15000) + 5000; // 5-20 seconds
+        }
+
+        setTimeout(() => {
+          showNotification(currentIndex);
+          currentIndex++;
+          scheduleNextNotification();
+        }, delay);
+      }
+
+      scheduleNextNotification();
+
+      setTimeout(() => {
+        const elementsToReveal = document.querySelectorAll('.hidden-by-delay');
+        elementsToReveal.forEach(el => {
+          el.classList.remove('hidden-by-delay');
+        });
+      }, 390000); // 390 seconds
+    });
+  </script>
 </body>
 </html>
