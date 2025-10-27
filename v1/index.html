@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>V1 - Ayuno Desbloqueado</title>
-  <link rel="icon" type="image/png" href="../images/favicon-ayuno.png">
-  <link rel="stylesheet" href="../style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dieta del Cazador | De vuelta a sus orígenes</title>
+  <link rel="icon" type="image/png" href="../images/favicon-ayuno.png" />
   <style>
-    /* Estilos específicos para a página V1 */
+    :root {
+      --red: #d32f2f;
+      --red-dark: #b71c1c;
+      --text: #ffffff;
+      --bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.15);
+    }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+      color: #111;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    .page {
+      width: 100%;
+      max-width: 980px;
+      padding: 32px 16px 48px;
+    }
+    
+    /* Seção Hero com Background */
     .hero-section {
       background-image: url('../images/bg-v1.png');
       background-size: cover;
@@ -20,6 +42,7 @@
       align-items: center;
       text-align: center;
       position: relative;
+      padding: 40px 20px;
     }
     
     .hero-section::before {
@@ -38,58 +61,135 @@
       z-index: 2;
       color: white;
       max-width: 800px;
-      padding: 20px;
+      width: 100%;
     }
     
-    .hero-title {
-      font-size: 3rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    /* Alerta Banner */
+    .alert-banner {
+       background: var(--red);
+       color: var(--text);
+       border-radius: 10px;
+       padding: 16px 20px;
+       box-shadow: 0 6px 20px var(--shadow);
+       display: flex;
+       gap: 12px;
+       align-items: center;
+       justify-content: center;
+       text-align: center;
+       transform-origin: center;
+       animation: zoomPulse 1.8s ease-in-out infinite;
+       max-width: 100%;
+       margin: 0 auto 30px;
+     }
+     
+     @media (max-width: 768px) {
+       .alert-banner {
+         padding: 14px 16px;
+         gap: 10px;
+         flex-direction: column;
+         text-align: center;
+       }
+       .alert-title {
+         font-size: 16px;
+       }
+       .alert-subtitle {
+         font-size: 13px;
+       }
+     }
+     
+    .alert-icon { font-size: 20px; line-height: 1; }
+    .alert-content { display: grid; gap: 6px; }
+    .alert-title {
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: 0.2px;
+    }
+    .alert-subtitle {
+      font-size: 14px;
+      opacity: 0.95;
     }
     
-    .hero-subtitle {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    /* Video Container */
+    .video-container {
+      text-align: center;
+      margin: 20px auto;
+      max-width: 720px;
     }
     
-    .content-section {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
+    .video-container iframe {
+      border: none;
+      max-width: 100%;
+      height: auto;
+      aspect-ratio: 3/4;
+      border-radius: 10px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    @keyframes zoomPulse {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
     
     @media (max-width: 768px) {
-      .hero-title {
-        font-size: 2rem;
+      .hero-section {
+        min-height: 100vh;
+        padding: 20px 15px;
       }
       
-      .hero-subtitle {
-        font-size: 1.2rem;
+      .video-container {
+        margin: 15px auto;
       }
       
-      .content-section {
-        padding: 40px 20px;
+      .video-container iframe {
+        width: 100%;
+        max-width: 100%;
       }
     }
   </style>
+  <!-- Meta Pixel Code -->
+  <script>
+    !(function(f,b,e,v,n,t,s){
+      if(f.fbq) return; n=f.fbq=function(){ n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments) };
+      if(!f._fbq) f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0'; n.queue=[];
+      t=b.createElement(e); t.async=!0; t.src=v;
+      s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s);
+    })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '804795828859528');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=804795828859528&ev=PageView&noscript=1" />
+  </noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
   <!-- Seção Hero com Background -->
   <section class="hero-section">
     <div class="hero-content">
-      <h1 class="hero-title">Ayuno Desbloqueado V1</h1>
-      <p class="hero-subtitle">Descubre el poder transformador del ayuno intermitente</p>
+      <!-- Alerta Banner -->
+      <section class="alert-banner" role="alert" aria-live="polite">
+        <div class="alert-icon">⚠️</div>
+        <div class="alert-content">
+          <div class="alert-title">¡Atención!</div>
+          <div class="alert-subtitle">Lo que vas a ver ahora es la presentación que la industria alimentaria no quiere que veas. Haz clic para reproducir.</div>
+        </div>
+      </section>
+
+      <!-- PANDA VIDEO - Video Player -->
+      <div class="video-container">
+        <iframe id="panda-bee454f6-575f-4b66-8cc0-512abe2ddc29" 
+                src="https://player-vz-da77d45b-cd8.tv.pandavideo.com.br/embed/?v=bee454f6-575f-4b66-8cc0-512abe2ddc29" 
+                style="border:none;" 
+                allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" 
+                allowfullscreen=true 
+                width="720" 
+                height="960" 
+                fetchpriority="high">
+        </iframe>
+      </div>
+      <!-- PANDA VIDEO - Video Player -->
     </div>
   </section>
-
-  <!-- Seção de Conteúdo -->
-  <main class="content-section">
-    <div class="container">
-      <h2 class="section-title">Bienvenido a la versión V1</h2>
-      <p>Esta es la nueva página V1 con el background personalizado que solicitaste.</p>
-    </div>
-  </main>
 </body>
 </html>
