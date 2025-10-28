@@ -941,6 +941,94 @@
           </div>
         </div>
         
+        <!-- FAQ Section -->
+        <section class="faq-section">
+          <div class="faq-container">
+            <h2 class="faq-title">Preguntas Frecuentes</h2>
+            <div class="faq-grid">
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3>¿Esta dieta es segura?</h3>
+                  <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p>Absolutamente. La Dieta del Cazador se basa en principios nutricionales ancestrales que nuestro cuerpo reconoce naturalmente. Es una forma de alimentación que respeta tu biología y promueve la salud óptima.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3>¿En cuánto tiempo voy a perder peso?</h3>
+                  <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p>Depende de tu nivel de compromiso. Pero los relatos de la comunidad muestran resultados visibles en pocos días: más energía, más foco, reducción de hinchazón y pérdida de grasa real.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3>¿Funciona para hombres y mujeres?</h3>
+                  <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p>Sí, completamente. Los principios de la Dieta del Cazador son universales y se adaptan tanto a hombres como mujeres, respetando las diferencias hormonales y metabólicas de cada género.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3>¿Funciona para quien ya intentó varias dietas y nada funcionó?</h3>
+                  <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p>La Dieta del Cazador funciona justamente porque no es una "dieta" en el sentido tradicional. Es un retorno a la forma como tu cuerpo fue programado para alimentarse. Diferente de dietas restrictivas, no vives de calorías, no necesitas suplementos caros y no necesitas comer cada 3 horas.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3>¿Funciona para quien nunca logró ganar masa muscular?</h3>
+                  <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p>Absolutamente. Ayuno, proteína animal con grasa saturada y exposición solar diaria forman el trío perfecto para la producción natural de hormonas, que activa el crecimiento muscular, mejora la absorción de proteína y acelera la recuperación del entrenamiento.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3>¿Puedo hacer gimnasio junto con la Dieta del Cazador?</h3>
+                  <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p>¡Puedes y es recomendado! La Dieta del Cazador potencializa cualquier entrenamiento físico. Vas a aprender a sincronizar tus entrenamientos con el ayuno y la alimentación para maximizar tus resultados.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3>¿Voy a poder seguir la dieta aun con poco dinero?</h3>
+                  <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p>Sí. La propuesta es justamente esa: resultados reales con lo que es accesible. No necesitas carnes nobles, suplementos caros o viandas gourmet. Con carne molida, huevo, fruta y grasa buena, el juego ya cambia.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3>¿Y si no me gusta?</h3>
+                  <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p>Tienes 7 días de garantía total. Si por cualquier motivo no estás satisfecho, devolvemos tu dinero sin preguntas. Tu inversión está 100% protegida.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
         <!-- Footer -->
         <footer>
           <p>© <span id="currentYear"></span> Dieta del Cazador. Todos los derechos reservados.</p>
@@ -1474,6 +1562,33 @@
       }
     }
 
+    // FAQ functionality
+    function initializeFAQ() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          
+          // Close all other FAQ items
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.classList.remove('active');
+            }
+          });
+          
+          // Toggle current item
+          if (isActive) {
+            item.classList.remove('active');
+          } else {
+            item.classList.add('active');
+          }
+        });
+      });
+    }
+
     // Initialize everything when DOM is loaded
     document.addEventListener('DOMContentLoaded', function() {
       setCurrentDate();
@@ -1481,9 +1596,166 @@
       addBannerClickHandler();
       handleBannerVisibility();
       setFooterYear();
+      initializeFAQ();
     });
   </script>
   <style>
+    /* FAQ Section Styles */
+    .faq-section {
+      padding: 80px 20px;
+      margin: 60px 0;
+    }
+
+    .faq-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      background: linear-gradient(135deg, #D19D54, #66451D);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 40px;
+      line-height: 1.2;
+    }
+
+    .faq-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .faq-item {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid transparent;
+      border-radius: 20px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 20px;
+      padding: 2px;
+      background: linear-gradient(135deg, #D19D54 0%, #F4D03F 50%, #D19D54 100%);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .faq-item:hover::before {
+      opacity: 1;
+    }
+
+    .faq-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(209, 157, 84, 0.2);
+    }
+
+    .faq-question {
+      display: flex;
+      align-items: center;
+      padding: 25px 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .faq-question h3 {
+      flex: 1;
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    .faq-toggle {
+      font-size: 24px;
+      font-weight: bold;
+      color: #D19D54;
+      transition: all 0.3s ease;
+      min-width: 30px;
+      text-align: center;
+    }
+
+    .faq-item.active .faq-toggle {
+      transform: rotate(45deg);
+      color: #F4D03F;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      background: rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      padding: 0 30px 25px 30px;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      padding-top: 15px;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .faq-section {
+        padding: 60px 15px;
+        margin: 40px 0;
+      }
+
+      .faq-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+      }
+
+      .faq-question {
+        padding: 20px;
+      }
+
+      .faq-question h3 {
+        font-size: 16px;
+      }
+
+      .faq-toggle {
+        font-size: 20px;
+        min-width: 25px;
+      }
+
+      .faq-item.active .faq-answer {
+        padding: 0 20px 20px 20px;
+      }
+
+      .faq-answer p {
+        font-size: 15px;
+        padding-top: 12px;
+      }
+    }
+
     footer {
       text-align: center;
       padding: 20px;
