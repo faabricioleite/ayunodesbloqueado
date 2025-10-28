@@ -16,7 +16,6 @@
       --green-dark: #388E3C;
       --green-light: #66BB6A;
     }
-    .hidden-by-delay { display: none; }
     html, body { height: 100%; }
     body {
       margin: 0;
@@ -204,6 +203,190 @@
       100% { background-position: 0% 50%; }
     }
     
+    /* Target Audience Section */
+    .target-audience-section {
+      text-align: center;
+      margin: 60px auto;
+      max-width: 800px;
+      padding: 40px 20px;
+      position: relative;
+    }
+    
+    .target-audience-image-container {
+      margin: 0 auto 40px auto;
+      max-width: 500px;
+    }
+    
+    .target-audience-image-container img {
+      width: 100%;
+      height: auto;
+      max-width: 500px;
+    }
+    
+    .target-audience-title {
+      font-size: 2.2rem;
+      font-weight: bold;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    
+    .target-audience-title .gradient-text {
+      background: linear-gradient(135deg, #D19D54, #66451D);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .target-audience-list {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .target-audience-item {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+      padding: 30px 25px;
+      margin: 30px auto;
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .target-audience-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 25px;
+      padding: 2px;
+      background: linear-gradient(135deg, #D19D54, #66451D);
+      -webkit-mask: 
+          linear-gradient(#fff 0 0) content-box, 
+          linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      z-index: -1;
+    }
+    
+    .check-icon {
+      color: #D19D54;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-right: 15px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    
+    .target-audience-item p {
+      color: #ffffff;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    .target-audience-item strong {
+      color: #D19D54;
+      font-weight: 600;
+    }
+
+    .target-audience-blur-circle {
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400px;
+      height: 400px;
+      background: linear-gradient(135deg, #D19D54, #66451D);
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.4;
+      z-index: 1;
+    }
+    
+    /* Lo que Desbloquearás Hoy Section */
+    .unlock-section {
+      text-align: center;
+      margin: 60px auto;
+      max-width: 800px;
+      padding: 40px 20px;
+    }
+    
+    .unlock-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      background: linear-gradient(135deg, #D19D54, #66451D);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 40px;
+      line-height: 1.2;
+    }
+    
+    .unlock-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .unlock-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+      text-align: left;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+    
+    .unlock-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 25px;
+      padding: 2px;
+      background: linear-gradient(135deg, #D19D54, #66451D);
+      -webkit-mask: 
+          linear-gradient(#fff 0 0) content-box, 
+          linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      z-index: -1;
+    }
+    
+    .unlock-item:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
+    
+    .unlock-icon {
+      width: 40px;
+      height: 40px;
+      margin-right: 20px;
+      margin-top: 5px;
+      fill: #D19D54;
+      flex-shrink: 0;
+    }
+    
+    .unlock-item p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #fff;
+      margin: 0;
+      flex: 1;
+    }
+
     /* Garantia Section */
     .garantia-section {
       text-align: center;
@@ -313,6 +496,36 @@
         max-width: 320px;
       }
       
+      .unlock-section {
+        margin: 40px auto;
+        padding: 30px 15px;
+      }
+      
+      .unlock-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+      }
+      
+      .unlock-item {
+        margin-bottom: 20px;
+        padding: 15px;
+        border-radius: 25px;
+        background: rgba(255, 255, 255, 0.1);
+        align-items: center;
+      }
+      
+      .unlock-icon {
+        width: 35px;
+        height: 35px;
+        margin-right: 15px;
+        fill: #D19D54;
+      }
+      
+      .unlock-item p {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+      
       .garantia-section {
         margin: 30px auto;
         max-width: 90%;
@@ -340,6 +553,86 @@
         height: 150px;
         bottom: -40px;
       }
+      
+      .target-audience-section {
+        margin: 40px auto;
+        max-width: 95%;
+        padding: 30px 15px;
+      }
+      
+      .target-audience-image-container {
+        max-width: 350px;
+        margin-bottom: 30px;
+      }
+      
+      .target-audience-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+      }
+      
+      .target-audience-item {
+        padding: 20px 15px;
+        margin: 20px auto;
+      }
+
+      .target-audience-blur-circle {
+        width: 200px;
+        height: 200px;
+        bottom: -50px;
+      }
+      
+      .target-audience-item p {
+        font-size: 1rem;
+      }
+      
+      .check-icon {
+        font-size: 1.3rem;
+        margin-right: 12px;
+      }
+      
+      /* Mobile styles for methods and benefits */
+      .methods-container img {
+        max-width: 250px;
+      }
+      
+      .benefits-list {
+        padding: 0 15px;
+      }
+      
+      .benefit-text {
+        font-size: 13px;
+      }
+      
+      /* Mobile styles for new elements */
+      .benefits-header h3 {
+        font-size: 16px;
+      }
+      
+      .validity-alert {
+        padding: 12px 15px;
+        margin: 15px 0;
+        flex-direction: column;
+        gap: 8px;
+      }
+      
+      .alert-text {
+        font-size: 12px;
+      }
+      
+      .countdown-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+      
+      .countdown-message {
+        font-size: 12px;
+      }
+      
+      .countdown-timer {
+        font-size: 14px;
+        padding: 6px 12px;
+      }
     }
   </style>
   <!-- Meta Pixel Code -->
@@ -359,6 +652,18 @@
   <!-- End Meta Pixel Code -->
 </head>
 <body>
+  <!-- Countdown Banner -->
+  <div class="countdown-banner" id="countdownBanner">
+    <div class="countdown-content">
+      <div class="countdown-text">
+        <span class="countdown-message">¡Último día de la promoción! Haz clic aquí para asegurar tu lugar.</span>
+      </div>
+      <div class="countdown-timer">
+        <span id="countdownDisplay">00:00:00</span>
+      </div>
+    </div>
+  </div>
+
   <!-- Seção Hero com Background -->
   <section class="hero-section hidden-by-delay">
     <div class="hero-content">
@@ -395,6 +700,112 @@
       <!-- Imagem Compritia -->
       <div class="compritia-container hidden-by-delay">
         <img src="../images/compritia.png" alt="Compritia" />
+      </div>
+      
+      <!-- Target Audience Section -->
+      <div class="target-audience-section">
+        <div class="target-audience-image-container">
+          <img src="../images/ALIMENTION.png" alt="Alimentación Saludable" />
+        </div>
+        <div class="target-audience-content">
+          <h2 class="target-audience-title">
+            <span class="gradient-text">Este convite é para ti que...</span>
+          </h2>
+          <div class="target-audience-list">
+            <div class="target-audience-item">
+              <span class="check-icon">✓</span>
+              <p>Ya intentaste de todo — ayuno, detox, suplementos — mas <strong>continúas cansada, sin energía y sin resultados reales.</strong></p>
+            </div>
+            <div class="target-audience-item">
+              <span class="check-icon">✓</span>
+              <p>Estás exhausta de despertar sin energía, vivir a base de café y se culpar por <strong>no conseguir mantener una alimentación saludable.</strong></p>
+            </div>
+            <div class="target-audience-item">
+              <span class="check-icon">✓</span>
+              <p>Quieres recuperar tu vitalidad, regular tus hormonas y volver a sentirte bien en tu propio cuerpo, <strong>de forma natural y sin radicalismos.</strong></p>
+            </div>
+            <div class="target-audience-item">
+              <span class="check-icon">✓</span>
+              <p>Deseas cuidar de ti misma y de tu familia con autonomía, usando una <strong>alimentación que nutre de verdad y respeta tu ritmo.</strong></p>
+            </div>
+            <div class="target-audience-item">
+              <span class="check-icon">✓</span>
+              <p>Quieres evitar enfermedades, equilibrar hormonas, mejorar el intestino e la inmunidad, <strong>sin precisar de más un protocolo rígido.</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="target-audience-blur-circle"></div>
+      </div>
+      
+      <!-- Lo que Desbloquearás Hoy Section -->
+      <div class="unlock-section hidden-by-delay">
+        <h2 class="unlock-title">Lo que Desbloquearás Hoy</h2>
+        <div class="unlock-content">
+          <div class="unlock-item">
+            <?xml version="1.0" encoding="utf-8"?>
+            <!-- License: CC Attribution. Made by Shannon E. Thomas: `https://dribbble.com/shannonethomas`  -->
+            <svg version="1.1" class="unlock-icon" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+              width="800px" height="800px" viewBox="0 0 32 32" xml:space="preserve">
+            <path d="M11.714,7l-0.551-3.859C11.077,2.539,11.544,2,12.153,2h7.694c0.609,0,1.076,0.539,0.99,1.141L20.286,7 
+              H11.714z M26,18v10c0,1.657-1.343,3-3,3H9c-1.657,0-3-1.343-3-3V18c0-2.761,2.239-5,5-5v-2H9c-0.552,0-1-0.448-1-1V9 
+              c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v1c0,0.552-0.448,1-1,1h-2v2C23.761,13,26,15.239,26,18z M14,21.816V22 
+              c0,0.552,0.448,1,1,1h2c0.552,0,1-0.448,1-1v-0.184c1.137-0.404,1.006-0.508,1-1.733c-0.008-1.629-1.274-3.029-2.902-3.081 
+              C14.397,16.947,13,18.31,13,20C13,21.304,12.837,21.403,14,21.816z M17.118,25.5l1.658-0.829C19.023,24.547,19.124,24.247,19,24v0 
+              c-0.124-0.247-0.424-0.347-0.671-0.224L16,24.941l-2.329-1.165C13.424,23.653,13.124,23.753,13,24v0 
+              c-0.124,0.247-0.023,0.547,0.224,0.671l1.658,0.829l-1.658,0.829C12.977,26.453,12.876,26.753,13,27v0 
+              c0.124,0.247,0.424,0.347,0.671,0.224L16,26.059l2.329,1.165C18.576,27.347,18.876,27.247,19,27v0 
+              c0.124-0.247,0.023-0.547-0.224-0.671L17.118,25.5z M15,21.11V22h2v-0.89c0,0,0.935-0.336,1.008-0.367 
+              C18.008,20.654,18,20.164,18,20c0-1.103-0.897-2-2-2s-2,0.897-2,2c0,0.164-0.008,0.654-0.008,0.744C14.065,20.775,15,21.11,15,21.11 
+              z"/>
+            </svg>
+            <p>Desintoxicar tu rutina.</p>
+          </div>
+          <div class="unlock-item">
+            <?xml version="1.0" encoding="utf-8"?>
+            <!-- License: CC Attribution. Made by wishforge.games: `https://www.wishforge.games/`  -->
+            <svg class="unlock-icon" version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+              viewBox="0 0 32 32" xml:space="preserve">
+            <g>
+              <ellipse fill="#000000" cx="11.5" cy="13" rx="2.5" ry="1"/>
+              <path d="M28.1,7.9C25.2,6.7,21.4,6,17.3,6C8.6,6,2,9,2,13c0,3,2.1,5.4,5.5,6.4c1,0.3,2,0.4,3.1,0.4c1.3,0,2.7-0.2,4-0.7 
+                c2.1-0.7,4.1-1.9,6.2-3.6c1.2-1,2.8-1.6,4.5-1.6h1.3c1.7,0,3-1.1,3.3-2.6C30.2,10,29.5,8.6,28.1,7.9z M11.5,16C8.9,16,7,14.7,7,13 
+                s1.9-3,4.5-3s4.5,1.3,4.5,3S14.1,16,11.5,16z"/>
+            </g>
+            <path d="M26.6,16h-1.3c-1.2,0-2.4,0.4-3.2,1.1c-2.3,1.9-4.6,3.2-6.9,4c-1.5,0.5-3.1,0.8-4.6,0.8c-1.2,0-2.5-0.2-3.6-0.5 
+              c-2.1-0.6-3.8-1.7-5-3.1V20c0,3,2.1,5.4,5.5,6.4c1,0.3,2,0.4,3.1,0.4c1.3,0,2.7-0.2,4-0.7c2.1-0.7,4.1-1.9,6.2-3.6 
+              c1.2-1,2.8-1.6,4.5-1.6h1.3c1.9,0,3.1-1.3,3.4-2.7c0-0.1,0.1-0.2,0.1-0.3v-3.2C29.1,15.6,27.9,16,26.6,16z"/>
+            </svg>
+            <p>Hacer elecciones saludables que se adaptan a tu tiempo y a tu bolsillo.</p>
+          </div>
+          <div class="unlock-item">
+            <?xml version="1.0" encoding="iso-8859-1"?>
+            <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+            <!-- License: CC0. Made by SVG Repo: `https://www.svgrepo.com/svg/49436/archery`  -->
+            <svg class="unlock-icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" 
+              viewBox="0 0 263.35 263.35" style="enable-background:new 0 0 263.35 263.35;" xml:space="preserve">
+            <path id="XMLID_1_" d="M263.185,12.914c-0.038-0.273-0.068-0.546-0.121-0.817c-0.032-0.161-0.079-0.317-0.117-0.477 
+              c-0.073-0.319-0.145-0.639-0.239-0.954c-0.034-0.111-0.079-0.219-0.116-0.33c-0.116-0.355-0.235-0.709-0.378-1.057 
+              c-0.032-0.077-0.072-0.149-0.104-0.226c-0.161-0.372-0.329-0.741-0.521-1.102c-0.04-0.074-0.087-0.144-0.128-0.216 
+              c-0.195-0.353-0.396-0.703-0.622-1.042c-0.088-0.132-0.189-0.254-0.281-0.383c-0.193-0.27-0.381-0.543-0.594-0.803 
+              c-0.315-0.386-0.651-0.758-1.006-1.113c0-0.001,0-0.001,0-0.001s-0.001-0.001-0.001-0.001c-0.028-0.028-0.06-0.052-0.088-0.08 
+              c-0.329-0.323-0.667-0.634-1.021-0.923c-0.313-0.256-0.638-0.487-0.966-0.714c-0.073-0.051-0.141-0.109-0.215-0.158 
+              c-0.396-0.265-0.804-0.506-1.218-0.729c-0.012-0.006-0.023-0.015-0.035-0.021c-0.425-0.227-0.858-0.43-1.299-0.614 
+              c-0.008-0.003-0.016-0.007-0.024-0.01c-0.427-0.177-0.861-0.33-1.299-0.466c-0.028-0.009-0.055-0.021-0.083-0.029 
+              c-0.42-0.127-0.844-0.23-1.271-0.32c-0.052-0.011-0.104-0.027-0.156-0.038c-0.439-0.087-0.882-0.15-1.326-0.198 
+              c-0.042-0.004-0.085-0.014-0.127-0.018c-0.5-0.049-1.001-0.074-1.503-0.073l-42.401-0.002c-8.284,0-15,6.715-15,15 
+              c0,8.284,6.715,15,15,15l6.213,0.001l-28.011,28.012c-23.846-19.129-53.257-29.524-84.269-29.524 
+              c-36.059,0.001-69.96,14.043-95.46,39.542h0C1.581,70.845,0,74.661,0,78.639c0,3.979,1.58,7.794,4.394,10.607l74.25,74.25 
+              l-27.426,27.426l-36.214-0.001c-8.285,0-15,6.715-15,15c-0.001,8.284,6.715,15,14.999,15l27.428,0.001l-0.001,27.425 
+              c0,8.284,6.715,15,15,15c4.143,0,7.893-1.679,10.607-4.394c2.714-2.714,4.394-6.464,4.394-10.606l0.001-36.212l27.426-27.427 
+              l74.242,74.242c5.858,5.858,15.355,5.858,21.213,0c49.048-49.049,52.381-126.758,10.017-179.716l28.019-28.02v6.213 
+              c0,8.284,6.715,15,15,15c4.143,0,7.892-1.679,10.607-4.394c2.714-2.714,4.393-6.464,4.393-10.606l0.001-42.425 
+              c0-0.275-0.026-0.548-0.041-0.822c-0.011-0.209-0.01-0.42-0.03-0.629C263.257,13.338,263.216,13.128,263.185,12.914z M36.96,79.386 
+              C55.017,65.825,76.872,58.491,99.854,58.49c22.983,0,44.836,7.34,62.892,20.902l-62.889,62.89L36.96,79.386z M183.95,226.376 
+              l-62.88-62.88l62.88-62.881C211.749,137.748,211.751,189.246,183.95,226.376z"/>
+            </svg>
+            <p>Rescatar prácticas ancestrales y crear una rutina que nutre cuerpo y alma.</p>
+          </div>
+        </div>
       </div>
       
       <!-- Garantia Section -->
@@ -451,6 +862,9 @@
           <span class="gradient-text">¡Toma tu insignia de cazador(a) y ven conmigo!</span> ⚡️
         </h2>
         <div class="price-section hidden-by-delay">
+          <div class="price-logo">
+            <img src="../images/logo-dieta.png" alt="Logo Dieta del Cazador" />
+          </div>
           <div class="price-text">
             <p>DE <span class="price-old">$100</span></p>
             <p>POR SOLO</p>
@@ -459,17 +873,78 @@
             <span class="price-currency">$</span>
             <span class="price-value">9.99</span>
           </div>
+          
+          <!-- Methods Image -->
+          <div class="methods-container">
+            <img src="../images/methods.png" alt="Métodos de Pagamento" />
+          </div>
+          
+          <!-- Benefits Header -->
+          <div class="benefits-header">
+            <h3>Esto es lo que recibirás:</h3>
+          </div>
+          
+          <!-- Benefits List -->
+          <div class="benefits-list">
+            <div class="benefit-item">
+              <span class="check-icon">✅</span>
+              <span class="benefit-text">PLAN COMPLETO DE 28 DÍAS CON LA ALIMENTACIÓN QUE NOS DEFINIÓ COMO ESPECIE</span>
+            </div>
+            <div class="benefit-item">
+              <span class="check-icon">✅</span>
+              <span class="benefit-text">LISTA DE COMPRAS SEMANAL</span>
+            </div>
+            <div class="benefit-item">
+              <span class="check-icon">✅</span>
+              <span class="benefit-text">RECETARIO DE LA DIETA DEL CAZADOR</span>
+            </div>
+            <div class="benefit-item">
+              <span class="check-icon">✅</span>
+              <span class="benefit-text">SOPORTE 24/7 POR WHATSAPP</span>
+            </div>
+            <div class="benefit-item">
+              <span class="check-icon">✅</span>
+              <span class="benefit-text">2 BONOS SECRETOS + ACCESO INMEDIATO</span>
+            </div>
+            <div class="benefit-item">
+              <span class="check-icon">✅</span>
+              <span class="benefit-text">7 DÍAS DE GARANTÍA INCONDICIONAL</span>
+            </div>
+            <div class="benefit-item">
+              <span class="check-icon">✅</span>
+              <span class="benefit-text">APP EXCLUSIVA + ACCESO DE POR VIDA</span>
+            </div>
+          </div>
+          
+          <!-- Validity Alert -->
+          <div class="validity-alert" id="validityAlert">
+            <div class="alert-icon">⚠️</div>
+            <div class="alert-text">
+              <strong>VÁLIDO SOLO HASTA EL <span id="currentDate"></span> A LAS 23:59</strong>
+            </div>
+          </div>
         </div>
         <div class="cta-container">
           <a href="https://pay.hotmart.com/H102526944Q?checkoutMode=10" class="cta-button" target="_blank">
             Desbloquear Mi Acceso Inmediato
           </a>
         </div>
+        
+        <!-- Imagem Compritia -->
+        <div class="compritia-container">
+          <img src="../images/compritia.png" alt="Compritia" />
+        </div>
+        
         <div class="alert-banner-small hidden-by-delay">
           <div class="alert-content-small">
             <div class="alert-subtitle-small">En la página de pago verás el precio convertido a tu moneda.</div>
           </div>
         </div>
+        
+        <!-- Footer -->
+        <footer>
+          <p>© <span id="currentYear"></span> Dieta del Cazador. Todos los derechos reservados.</p>
+        </footer>
       </div>
     </div>
   </section>
@@ -523,6 +998,24 @@
     }
     .hunter-badge-image-container {
       margin-bottom: 30px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hunter-badge-image-container::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(135deg, #D19D54, #66451D);
+      border-radius: 50%;
+      filter: blur(40px);
+      opacity: 0.3;
+      z-index: -1;
     }
     .hunter-badge-image-container img {
       max-width: 400px;
@@ -546,6 +1039,14 @@
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       animation: pulse 2s infinite;
+    }
+
+    .price-logo img {
+      display: block;
+      margin: 0 auto 12px;
+      max-width: 180px;
+      width: 100%;
+      height: auto;
     }
 
     @keyframes pulse {
@@ -593,6 +1094,140 @@
     .price-value {
       font-size: 72px;
       font-weight: 800;
+    }
+    
+    /* Methods Container */
+    .methods-container {
+      margin: 20px 0;
+      text-align: center;
+    }
+    .methods-container img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+    }
+    
+    /* Benefits List */
+    .benefits-list {
+      margin: 20px 0;
+      padding: 0 20px;
+    }
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      padding: 8px 0;
+    }
+    .check-icon {
+      font-size: 16px;
+      margin-right: 12px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .benefit-text {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.4;
+      text-align: left;
+    }
+    
+    /* Benefits Header */
+    .benefits-header {
+      text-align: center;
+      margin: 15px 0 20px 0;
+    }
+    .benefits-header h3 {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    /* Validity Alert */
+    .validity-alert {
+      background: rgba(255, 0, 0, 0.9);
+      border-radius: 12px;
+      padding: 15px 20px;
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      animation: alertPulse 2s ease-in-out infinite;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+    }
+    .alert-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .alert-text {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    /* Countdown Banner */
+    .countdown-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+      color: white;
+      padding: 15px 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    .countdown-banner:hover {
+      background: linear-gradient(135deg, #cc0000 0%, #990000 100%);
+    }
+    .countdown-banner.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .countdown-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 15px;
+    }
+    .countdown-message {
+      font-size: 14px;
+      font-weight: 600;
+      flex: 1;
+    }
+    .countdown-timer {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      padding: 8px 15px;
+      font-family: 'Courier New', monospace;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 1px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    @keyframes alertPulse {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+      }
+      50% {
+        box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+      }
     }
     .alert-banner-small {
       background: rgba(255, 255, 255, 0.1);
@@ -744,7 +1379,7 @@
 
         let delay;
         if (currentIndex === 0) {
-          delay = 390000; // 390 seconds for the first one
+          delay = 10000; // 10 seconds for the first one
         } else {
           delay = Math.floor(Math.random() * 15000) + 5000; // 5-20 seconds
         }
@@ -758,13 +1393,106 @@
 
       scheduleNextNotification();
 
-      setTimeout(() => {
-        const elementsToReveal = document.querySelectorAll('.hidden-by-delay');
-        elementsToReveal.forEach(el => {
-          el.classList.remove('hidden-by-delay');
-        });
-      }, 390000); // 390 seconds
     });
   </script>
-</body>
+
+
+
+  <script>
+    // Set current date in validity alert
+    function setCurrentDate() {
+      const today = new Date();
+      const day = String(today.getDate()).padStart(2, '0');
+      const month = String(today.getMonth() + 1).padStart(2, '0');
+      const year = today.getFullYear();
+      const formattedDate = `${day}/${month}/${year}`;
+      document.getElementById('currentDate').textContent = formattedDate;
+    }
+
+    // Countdown timer function
+    function startCountdown() {
+      const now = new Date();
+      const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+      
+      function updateCountdown() {
+        const currentTime = new Date();
+        const timeLeft = endOfDay - currentTime;
+        
+        if (timeLeft <= 0) {
+          document.getElementById('countdownDisplay').textContent = '00:00:00';
+          return;
+        }
+        
+        const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        
+        const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        document.getElementById('countdownDisplay').textContent = formattedTime;
+      }
+      
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    }
+
+    // Add click functionality to banner
+    function addBannerClickHandler() {
+      const countdownBanner = document.getElementById('countdownBanner');
+      
+      countdownBanner.addEventListener('click', function() {
+        window.open('https://pay.hotmart.com/H102526944Q?checkoutMode=10', '_blank');
+      });
+    }
+
+    // Show banner when price section is visible
+    function handleBannerVisibility() {
+      const priceSection = document.querySelector('.price-section');
+      const countdownBanner = document.getElementById('countdownBanner');
+      
+      if (!priceSection || !countdownBanner) return;
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            countdownBanner.classList.add('show');
+          } else {
+            countdownBanner.classList.remove('show');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+      
+      observer.observe(priceSection);
+    }
+
+    function setFooterYear() {
+      const yearElement = document.getElementById('currentYear');
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+    }
+
+    // Initialize everything when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      setCurrentDate();
+      startCountdown();
+      addBannerClickHandler();
+      handleBannerVisibility();
+      setFooterYear();
+    });
+  </script>
+  <style>
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    footer p {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+  </style>
+ </body>
 </html>
