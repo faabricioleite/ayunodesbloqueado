@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dieta del Cazador | De vuelta a sus orígenes</title>
   <link rel="icon" type="image/png" href="../images/favicon-ayuno.png" />
+  
+  <!-- Performance optimization scripts for Panda Video -->
+  <link rel="preload" href="https://player-vz-da77d45b-cd8.tv.pandavideo.com.br/embed/css/styles.css" as="style">
+  <link rel="prerender" href="https://player-vz-da77d45b-cd8.tv.pandavideo.com.br/embed/?v=24e87a0c-d962-48ee-abc3-1fc45df8de32">
+  <link rel="preload" href="https://player-vz-da77d45b-cd8.tv.pandavideo.com.br/embed/js/hls.js" as="script">
+  <link rel="preload" href="https://player-vz-da77d45b-cd8.tv.pandavideo.com.br/embed/js/plyr.polyfilled.min.js" as="script">
+  <link rel="preload" href="https://config.tv.pandavideo.com.br/vz-da77d45b-cd8/24e87a0c-d962-48ee-abc3-1fc45df8de32.json" as="fetch">
+  <link rel="preload" href="https://config.tv.pandavideo.com.br/vz-da77d45b-cd8/config.json" as="fetch">
+  <link rel="preload" href="https://b-vz-da77d45b-cd8.tv.pandavideo.com.br/24e87a0c-d962-48ee-abc3-1fc45df8de32/playlist.m3u8" as="fetch">
+  <link rel="dns-prefetch" href="https://b-vz-da77d45b-cd8.tv.pandavideo.com.br">
+  <link rel="dns-prefetch" href="https://player-vz-da77d45b-cd8.tv.pandavideo.com.br">
+  <link rel="dns-prefetch" href="https://vz-da77d45b-cd8.b-cdn.net">
+  
   <style>
     :root {
       --red: #d32f2f;
@@ -32,6 +45,14 @@
       padding: 32px 16px 48px;
     }
     
+    .hidden-on-start {
+      display: none;
+    }
+
+    .hidden-by-delay {
+      display: none;
+    }
+
     /* Seção Hero com Background */
     .hero-section {
       background-image: url('../images/bg-v1.png');
@@ -68,6 +89,31 @@
       max-width: 800px;
       width: 100%;
     }
+
+    /* Título Principal */
+    .hero-title-section {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .hero-main-title {
+      font-size: 2.4rem;
+      font-weight: bold;
+      background: linear-gradient(135deg, #D19D54, #66451D);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 18px;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: white;
+      line-height: 1.4;
+      margin: 0;
+      font-weight: 400;
+    }
     
     /* Alerta Banner */
     .alert-banner {
@@ -89,6 +135,22 @@
      }
      
      @media (max-width: 768px) {
+       .hero-title-section {
+         margin-bottom: 25px;
+         padding: 0 15px;
+       }
+       
+       .hero-main-title {
+         font-size: 1.4rem;
+         margin-bottom: 10px;
+         line-height: 1.3;
+       }
+       
+       .hero-subtitle {
+         font-size: 0.9rem;
+         line-height: 1.4;
+       }
+       
        .alert-banner {
          padding: 14px 16px;
          gap: 10px;
@@ -667,19 +729,16 @@
   <!-- Seção Hero com Background -->
   <section class="hero-section hidden-by-delay">
     <div class="hero-content">
-      <!-- Alerta Banner -->
-      <section class="alert-banner" role="alert" aria-live="polite">
-        <div class="alert-icon">⚠️</div>
-        <div class="alert-content">
-          <div class="alert-title">¡Atención!</div>
-          <div class="alert-subtitle">Lo que vas a ver ahora es la presentación que la industria alimentaria no quiere que veas. <span class="bold-text">Haz clic para reproducir.</span></div>
-        </div>
+      <!-- Título Principal -->
+      <section class="hero-title-section">
+        <h1 class="hero-main-title">La Dieta del Cazador va a hacerte quemar grasa, ganar músculo y despertar tu fuerza primal naturalmente.</h1>
+        <p class="hero-subtitle">Mientras la mayoría sigue esclava del sistema, tú vas a tener el cuerpo y la energía de tus ancestros — sin medicamentos ni suplementos caros.</p>
       </section>
 
       <!-- PANDA VIDEO - Video Player -->
       <div class="video-container">
-        <iframe id="panda-bee454f6-575f-4b66-8cc0-512abe2ddc29" 
-                src="https://player-vz-da77d45b-cd8.tv.pandavideo.com.br/embed/?v=bee454f6-575f-4b66-8cc0-512abe2ddc29" 
+        <iframe id="panda-24e87a0c-d962-48ee-abc3-1fc45df8de32" 
+                src="https://player-vz-da77d45b-cd8.tv.pandavideo.com.br/embed/?v=24e87a0c-d962-48ee-abc3-1fc45df8de32" 
                 style="border:none;" 
                 allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" 
                 allowfullscreen=true 
@@ -703,7 +762,7 @@
       </div>
       
       <!-- Target Audience Section -->
-      <div class="target-audience-section">
+      <div class="target-audience-section hidden-by-delay">
         <div class="target-audience-image-container">
           <img src="../images/ALIMENTION.png" alt="Alimentación Saludable" />
         </div>
@@ -1446,41 +1505,6 @@
         { name: "Natalia B.", city: "Pereira", country: "Colombia" }
       ];
 
-      const toast = document.getElementById('toast-notification');
-      const toastMessage = toast.querySelector('.toast-message');
-      let currentIndex = 0;
-
-      function showNotification(index) {
-        const notification = notifications[index];
-        toastMessage.innerHTML = `<b>${notification.name}</b> desde ${notification.city}, ${notification.country}.`;
-        toast.classList.add('show');
-
-        setTimeout(() => {
-          toast.classList.remove('show');
-        }, 5000); // Hide after 5 seconds
-      }
-
-      function scheduleNextNotification() {
-        if (currentIndex >= notifications.length) {
-          currentIndex = 0; // Loop
-        }
-
-        let delay;
-        if (currentIndex === 0) {
-          delay = 10000; // 10 seconds for the first one
-        } else {
-          delay = Math.floor(Math.random() * 15000) + 5000; // 5-20 seconds
-        }
-
-        setTimeout(() => {
-          showNotification(currentIndex);
-          currentIndex++;
-          scheduleNextNotification();
-        }, delay);
-      }
-
-      scheduleNextNotification();
-
     });
   </script>
 
@@ -1597,7 +1621,87 @@
       handleBannerVisibility();
       setFooterYear();
       initializeFAQ();
+
+      // Delay for elements and toasts
+      const delayTime = (5 * 60 + 8) * 1000; // 5 minutes and 8 seconds
+
+      setTimeout(() => {
+        // Show hidden elements
+        const hiddenElements = document.querySelectorAll('.hidden-by-delay');
+        hiddenElements.forEach(el => {
+          el.style.display = 'block';
+        });
+
+        // Start toasts
+        startToasts();
+      }, delayTime);
     });
+
+    function startToasts() {
+      const notifications = [
+        { name: "Isabella G.", city: "Bogotá", country: "Colombia" },
+        { name: "Mateo R.", city: "Guadalajara", country: "México" },
+        { name: "Valentina S.", city: "Buenos Aires", country: "Argentina" },
+        { name: "Santiago M.", city: "Santo Domingo", country: "República Dominicana" },
+        { name: "Camila V.", city: "Quito", country: "Equador" },
+        { name: "Sebastián L.", city: "Lisboa", country: "Portugal" },
+        { name: "Mariana F.", city: "Medellín", country: "Colombia" },
+        { name: "Alejandro P.", city: "Cancún", country: "México" },
+        { name: "Sofía T.", city: "Santiago", country: "Chile" },
+        { name: "Diego H.", city: "Lima", country: "Perú" },
+        { name: "Luciana E.", city: "Madrid", country: "España" },
+        { name: "Javier N.", city: "Tijuana", country: "México" },
+        { name: "Valeria C.", city: "Cali", country: "Colombia" },
+        { name: "Adriana P.", city: "Cúcuta", country: "Colombia" },
+        { name: "Francisco H.", city: "León", country: "México" },
+        { name: "Laura S.", city: "Mendoza", country: "Argentina" },
+        { name: "Carlos G.", city: "Punta Cana", country: "República Dominicana" },
+        { name: "Ana Sofía L.", city: "Cuenca", country: "Equador" },
+        { name: "Esteban Z.", city: "Porto", country: "Portugal" },
+        { name: "Daniela R.", city: "Santa Marta", country: "Colombia" },
+        { name: "José M.", city: "Mérida", country: "México" },
+        { name: "Gabriela C.", city: "Valparaíso", country: "Chile" },
+        { name: "Luis D.", city: "Trujillo", country: "Perú" },
+        { name: "Verónica A.", city: "Málaga", country: "España" },
+        { name: "Patricio N.", city: "Querétaro", country: "México" },
+        { name: "Natalia B.", city: "Pereira", country: "Colombia" }
+      ];
+
+      const toast = document.getElementById('toast-notification');
+      const toastMessage = toast.querySelector('.toast-message');
+      let currentIndex = 0;
+
+      function showNotification(index) {
+        const notification = notifications[index];
+        toastMessage.innerHTML = `<b>${notification.name}</b> desde ${notification.city}, ${notification.country}.`;
+        toast.classList.add('show');
+
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 5000); // Hide after 5 seconds
+      }
+
+      function scheduleNextNotification() {
+        if (currentIndex >= notifications.length) {
+          currentIndex = 0; // Loop
+        }
+
+        let delay;
+        if (currentIndex === 0) {
+          delay = 10000; // 10 seconds for the first one
+        } else {
+          delay = Math.floor(Math.random() * 15000) + 5000; // 5-20 seconds
+        }
+
+        setTimeout(() => {
+          showNotification(currentIndex);
+          currentIndex++;
+          scheduleNextNotification();
+        }, delay);
+      }
+
+      scheduleNextNotification();
+    }
   </script>
   <style>
     /* FAQ Section Styles */
