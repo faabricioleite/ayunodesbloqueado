@@ -59,7 +59,6 @@
       background-size: 100% auto;
       background-position: center top;
       background-repeat: no-repeat;
-      width: 100vw;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -68,7 +67,6 @@
       text-align: center;
       position: relative;
       padding: 40px 20px;
-      margin-left: calc(-50vw + 50%);
     }
     
     .hero-section::before {
@@ -682,6 +680,13 @@
       }
       
       .countdown-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+      
+      .countdown-content {
         flex-direction: column;
         gap: 10px;
         text-align: center;
@@ -876,9 +881,9 @@
         
         <!-- Garantia Card -->
         <div class="garantia-card">
-          <h3 class="garantia-title">7 días de garantía incondicional</h3>
+          <h3 class="garantia-title">14 días de garantía incondicional</h3>
           <p class="garantia-text">
-            Experimenta la Dieta del Cazador por 7 días y si no te gusta, ¡te devolvemos toda tu inversión!
+            Experimenta la Dieta del Cazador por 14 días y si no te gusta, ¡te devolvemos toda tu inversión!
           </p>
           <p class="garantia-text">
             Pago 100% seguro procesado por Hotmart, plataforma líder en ventas de productos digitales en América Latina.
@@ -1081,7 +1086,7 @@
                   <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                  <p>Tienes 7 días de garantía total. Si por cualquier motivo no estás satisfecho, devolvemos tu dinero sin preguntas. Tu inversión está 100% protegida.</p>
+                  <p>Tienes 14 días de garantía total. Si por cualquier motivo no estás satisfecho, devolvemos tu dinero sin preguntas. Tu inversión está 100% protegida.</p>
                 </div>
               </div>
             </div>
@@ -1629,7 +1634,7 @@
         // Show hidden elements
         const hiddenElements = document.querySelectorAll('.hidden-by-delay');
         hiddenElements.forEach(el => {
-          el.style.display = 'block';
+          el.classList.remove('hidden-by-delay');
         });
 
         // Start toasts
